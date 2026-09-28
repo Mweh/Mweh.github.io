@@ -24,6 +24,9 @@ export const profile: Profile = {
   ],
   // portrait: { src: "/images/profile/portrait.jpg", alt: "Portrait of Muhammad Fahmi" },
   cvUrl: ph("CV PDF — place file at public/cv/muhammad-fahmi-cv.pdf and set cvUrl"),
-  // Replace with the final domain when available.
-  siteUrl: "https://id-preview--a26dec6c-c93f-471d-97c8-eb972e87e561.lovable.app",
+  // Production origin (no trailing slash). Override at build time with
+  // VITE_SITE_URL; defaults to the GitHub Pages user site.
+  siteUrl:
+    (import.meta.env["VITE_SITE_URL"] as string | undefined) ??
+    "https://muhammadfahmi.github.io",
 };

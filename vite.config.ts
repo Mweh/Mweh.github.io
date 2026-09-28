@@ -6,10 +6,25 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// Every page is prerendered to a static HTML file at build time, so the site
+// deploys to any static host (GitHub Pages) and deep links like
+// /work/koalafit resolve to work/koalafit/index.html — never a 404.
+// NOTE: keep these slugs in sync with published projects in src/data/projects.ts
+// (the "@/..." import alias is not available inside vite.config.ts).
+const projectSlugs = ["brimo", "mytelkomsel", "koalafit", "mindmories", "marble", "one-more-inch"];
+const pages = [
+  { path: "/" },
+  { path: "/work" },
+  { path: "/resume" },
+  ...projectSlugs.map((slug) => ({ path: `/work/${slug}` })),
+];
+
 export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    pages,
+    prerender: { enabled: true, autoStaticPathsDiscovery: false },
   },
 });
