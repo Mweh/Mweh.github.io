@@ -22,6 +22,7 @@ Read `README.md` and `docs/ARCHITECTURE.md` first.
 - SEO tags come from `buildHead()` in `src/lib/seo.ts`; og:image only on leaf routes with a real absolute image.
 - Motion is CSS plus `hooks/use-reveal.ts`; always respect `prefers-reduced-motion` — no animation libraries.
 - Styling uses semantic tokens in `src/styles.css` (oklch). No raw color utilities like `text-white` or hex values in components.
+- Production is static: all routes prerender to HTML for GitHub Pages; no backend, server routes, or Lovable runtime deps. When adding a published project, add its slug to `projectSlugs` in `vite.config.ts`.
 
 ## Conventions
 
