@@ -1,24 +1,31 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { HomePage } from "@/components/pages/HomePage";
+import { profile } from "@/data/profile";
+import { socialLinks } from "@/data/socialLinks";
+import { buildHead, jsonLd } from "@/lib/seo";
+import { isPlaceholder } from "@/lib/placeholder";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    ...buildHead({
+      title: `${profile.name} — ${profile.title}`,
+      description: profile.supportingStatement,
+      path: "/",
+      type: "profile",
+    }),
+    scripts: [
+      jsonLd({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: profile.name,
+        jobTitle: profile.title,
+        url: profile.siteUrl,
+        knowsAbout: ["Swift", "SwiftUI", "UIKit", "iOS", "Apple Platforms"],
+        sameAs: socialLinks
+          .map((l) => l.href)
+          .filter((h): h is string => !isPlaceholder(h) && h.startsWith("http")),
+      }),
+    ],
+  }),
+  component: HomePage,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
