@@ -1,29 +1,43 @@
-# Welcome to your Lovable project
+# Muhammad Fahmi — iOS Developer Portfolio
 
-This project was built with [Lovable](https://lovable.dev).
+Personal portfolio for recruiters (Jakarta banks, telcos, tech companies) and international freelance clients (Upwork). Curated case studies, centralized typed content, no backend.
 
-## Build with Lovable
+## Stack
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+TanStack Start (React 19, SSR) · Vite · TypeScript · Tailwind CSS v4. No CMS, no database, no animation or state libraries.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Run
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+bun install
+bun run dev      # http://localhost:8080
+bun run build    # production build
+bun run preview
 ```
 
-## Built with
+Deploys as a standard TanStack Start app (default target: Cloudflare Workers via Nitro).
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## Where content lives
+
+All content is in `src/data/` — components never contain copy.
+
+| File | Contents |
+|---|---|
+| `profile.ts` | Name, title, statements, about text, CV path, site URL |
+| `socialLinks.ts` | Email, LinkedIn, GitHub, Upwork |
+| `projects.ts` | Every project and its case study |
+| `experience.ts` | Timeline |
+| `freelance.ts` | International freelance entries |
+| `skills.ts` | Grouped skills |
+
+Missing information is written as `ph("what is missing")` and shows on the site as a dashed "To be added" label. Search for `ph(` to find everything still to fill in.
+
+## Add a project
+
+Append one object to the array in `src/data/projects.ts`. The card, `/work/<slug>` page, work index, sitemap and metadata are generated from it. See `docs/CONTENT_GUIDE.md`.
+
+## Docs
+
+- `AGENTS.md` — rules for coding agents
+- `docs/ARCHITECTURE.md` — routing, data model, components, styling, assets
+- `docs/CONTENT_GUIDE.md` — writing and adding content
