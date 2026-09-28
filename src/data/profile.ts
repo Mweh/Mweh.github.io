@@ -8,7 +8,7 @@ export const profile: Profile = {
   experienceYears: "5+",
   headline: "iOS Developer building native Apple experiences.",
   supportingStatement:
-    "5+ years building and shipping native iOS applications with Swift, SwiftUI, UIKit, and the Apple ecosystem.",
+    "3+ years building and shipping native iOS applications with Swift, SwiftUI, UIKit, and the Apple ecosystem.",
   heroStatement: "5+ years building and shipping native iOS applications.",
   technologyLine: ["Swift", "SwiftUI", "UIKit", "Apple Platforms"],
   location: ph("Location, e.g. city, Indonesia"),
