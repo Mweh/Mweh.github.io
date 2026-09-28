@@ -19,4 +19,8 @@ const candidates = ["dist/client", ".output/public", "dist"];
 const outDir = candidates.find((d) => existsSync(join(d, "index.html"))) ?? "dist/client";
 mkdirSync(outDir, { recursive: true });
 writeFileSync(join(outDir, "sitemap.xml"), body);
-console.log(`sitemap.xml written to ${outDir} (${paths.length} URLs, origin ${profile.siteUrl})`);
+writeFileSync(
+  join(outDir, "robots.txt"),
+  `User-agent: *\nAllow: /\n\nSitemap: ${profile.siteUrl}/sitemap.xml\n`,
+);
+console.log(`sitemap.xml + robots.txt written to ${outDir} (${paths.length} URLs, origin ${profile.siteUrl})`);
