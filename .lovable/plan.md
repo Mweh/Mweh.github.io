@@ -35,8 +35,8 @@ The GitHub repository alone is enough to build and deploy the site. Lovable stay
 - Serve the output folder with a plain static server and open `/work/koalafit`, `/work/mindmories`, `/work/marble`, `/work/brimo` directly (fresh tab, no prior navigation) — each must load with correct title, no 404, no console errors.
 - Also test under a sub-path (`BASE_PATH=/portfolio/`) and an unknown URL shows the 404 page.
 
-## One thing I need from you
-Will the site live at `fahmi.github.io` (repo named `<username>.github.io`), a project repo (`github.io/<repo>`), or a custom domain? The plan supports all three; your answer just sets the defaults.
+## Hosting decision (confirmed)
+Free GitHub Pages **user site**: public repository named `<your-github-username>.github.io`, production URL `https://<your-github-username>.github.io`. No custom domain, no Lovable Cloud, no paid hosting. `SITE_URL` defaults to this URL (username filled in when known) and `BASE_PATH` stays `/`, so deep links like `/work/koalafit` serve `work/koalafit/index.html` directly.
 
 ## Technical details
 - Prerender config via `tanstackStart: { prerender: { enabled: true, crawlLinks: true }, pages: [...] }` in `vite.config.ts`, with the pages list derived from project data; nitro preset set to static.
