@@ -27,6 +27,6 @@ export const profile: Profile = {
   // Production origin (no trailing slash). Override at build time with
   // VITE_SITE_URL; defaults to the GitHub Pages user site.
   siteUrl:
-    (import.meta.env.VITE_SITE_URL as string | undefined) ??
+    (import.meta.env["VITE_SITE_URL"] as string | undefined) ??
     "https://muhammadfahmi.github.io",
 };
