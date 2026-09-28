@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ResumeRouteImport } from './routes/resume'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as WorkIndexRouteImport } from './routes/work.index'
 import { Route as WorkSlugRouteImport } from './routes/work.$slug'
 
@@ -23,11 +22,6 @@ const IndexRoute = IndexRouteImport.update({
 const ResumeRoute = ResumeRouteImport.update({
   id: '/resume',
   path: '/resume',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WorkIndexRoute = WorkIndexRouteImport.update({
@@ -44,14 +38,12 @@ const WorkSlugRoute = WorkSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/resume': typeof ResumeRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work/$slug': typeof WorkSlugRoute
   '/work/': typeof WorkIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/resume': typeof ResumeRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work/$slug': typeof WorkSlugRoute
   '/work': typeof WorkIndexRoute
 }
@@ -59,22 +51,20 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/resume': typeof ResumeRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work/$slug': typeof WorkSlugRoute
   '/work/': typeof WorkIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/resume' | '/sitemap.xml' | '/work/$slug' | '/work/'
+  fullPaths: '/' | '/resume' | '/work/$slug' | '/work/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/resume' | '/sitemap.xml' | '/work/$slug' | '/work'
-  id: '__root__' | '/' | '/resume' | '/sitemap.xml' | '/work/$slug' | '/work/'
+  to: '/' | '/resume' | '/work/$slug' | '/work'
+  id: '__root__' | '/' | '/resume' | '/work/$slug' | '/work/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ResumeRoute: typeof ResumeRoute
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WorkSlugRoute: typeof WorkSlugRoute
   WorkIndexRoute: typeof WorkIndexRoute
 }
@@ -93,13 +83,6 @@ declare module '@tanstack/react-router' {
       path: '/resume'
       fullPath: '/resume'
       preLoaderRoute: typeof ResumeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/work/': {
@@ -122,7 +105,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ResumeRoute: ResumeRoute,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
   WorkSlugRoute: WorkSlugRoute,
   WorkIndexRoute: WorkIndexRoute,
 }
