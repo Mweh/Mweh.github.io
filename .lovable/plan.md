@@ -30,7 +30,25 @@ Both uploaded files are identical; the specification is treated as the source of
 ### Deviation from the spec's suggested structure (and why)
 The spec suggests `src/pages/`. This stack uses file-based routing in `src/routes/`, and a parallel `pages/` folder would confuse the router conventions for any future agent. Instead: route files stay thin (metadata + one page component), and the page composition lives in `src/components/pages/`. Same separation, conventional for this framework.
 
-No new dependencies are planned. Motion is done with CSS and a tiny `IntersectionObserver` hook rather than an animation library.
+## 1b. Dependency audit
+
+**Packages to add: none.**
+
+| Need | Solution | Why no package |
+|---|---|---|
+| Animation / reveals | CSS transitions + ~20-line `IntersectionObserver` hook | Framer Motion / GSAP add 30-60 KB for fades and hover lifts |
+| Smooth scroll | CSS `scroll-behavior: smooth` (off under reduced motion) | Lenis is scroll-jacking the spec forbids |
+| State | React `useState` for the mobile menu only | Content is static data; Redux/Zustand unnecessary |
+| Data fetching | Direct imports from `src/data/*.ts` | No remote data; TanStack Query not used by any page |
+| Content / CMS | Typed TS files | Spec forbids a CMS |
+| Contact form | None — email/LinkedIn/Upwork links | Spec says form optional; avoids a backend and form library |
+| SEO / head | Built-in route `head()` | No react-helmet needed |
+| Sitemap | Server route generating XML from data | Trivial string template |
+| 3D / smooth effects | None | Excluded by spec |
+
+**Already installed and kept (used):** React, TanStack Start/Router (the framework; stands in for React Router), Tailwind v4, `clsx` + `tailwind-merge` (`cn`), `class-variance-authority` (button variants), `lucide-react` (a few icons, tree-shaken), `@radix-ui/react-dialog` via `sheet` (accessible mobile menu: focus trap, Escape, aria — worth it over hand-rolling).
+
+**Already installed but unused by the portfolio:** TanStack Query (wired into the template router; left in place, zero page usage), `react-hook-form`, `zod`, `recharts`, `embla-carousel-react`, `date-fns`, `react-day-picker`, `cmdk`, `vaul`, `input-otp`, `sonner`, `react-resizable-panels`, and most Radix primitives. They ship no code to visitors because nothing imports them. Optional cleanup step (recommended, at the end): remove the unused shadcn primitive files and their packages so the repo only contains what the site uses — clearer for future agents. Framework-level packages are not touched.
 
 ## 2. Folder structure
 
