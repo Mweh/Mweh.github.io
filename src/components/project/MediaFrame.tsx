@@ -8,7 +8,7 @@ export function MediaFrame({
   className,
   priority = false,
 }: {
-  image?: ProjectImage;
+  image?: ProjectImage | undefined;
   label: string;
   className?: string;
   priority?: boolean;

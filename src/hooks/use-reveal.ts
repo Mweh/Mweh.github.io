@@ -11,11 +11,11 @@ export function useReveal<T extends HTMLElement>() {
     const el = ref.current;
     if (!el || typeof IntersectionObserver === "undefined") return;
     if (el.getBoundingClientRect().top < window.innerHeight) return;
-    el.dataset.reveal = "pending";
+    el.dataset["reveal"] = "pending";
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          el.dataset.reveal = "done";
+        if (entry?.isIntersecting) {
+          el.dataset["reveal"] = "done";
           io.disconnect();
         }
       },

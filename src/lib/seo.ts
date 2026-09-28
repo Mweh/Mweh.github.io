@@ -6,7 +6,7 @@ interface MetaInput {
   /** Path starting with "/" */
   path: string;
   /** Absolute https image URL, only when a real image exists. */
-  image?: string;
+  image?: string | undefined;
   type?: "website" | "article" | "profile";
   noindex?: boolean;
 }
