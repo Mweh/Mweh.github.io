@@ -5,16 +5,18 @@
 //     React/TanStack dedupe, error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
-import { publishedProjects } from "./src/data/projects";
 
 // Every page is prerendered to a static HTML file at build time, so the site
 // deploys to any static host (GitHub Pages) and deep links like
 // /work/koalafit resolve to work/koalafit/index.html — never a 404.
+// NOTE: keep these slugs in sync with published projects in src/data/projects.ts
+// (the "@/..." import alias is not available inside vite.config.ts).
+const projectSlugs = ["brimo", "mytelkomsel", "koalafit", "mindmories", "marble", "one-more-inch"];
 const pages = [
   { path: "/" },
   { path: "/work" },
   { path: "/resume" },
-  ...publishedProjects.map((p) => ({ path: `/work/${p.slug}` })),
+  ...projectSlugs.map((slug) => ({ path: `/work/${slug}` })),
 ];
 
 export default defineConfig({
