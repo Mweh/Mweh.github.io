@@ -51,3 +51,11 @@ Edit `src/data/freelance.ts`. Replace each `ph()` field with real details, or wi
 ## Skills
 
 Edit `src/data/skills.ts`. Keep groups short; only list skills you can discuss in an interview.
+
+## Cards and case studies (v2)
+
+- `type`: card label, e.g. "Professional / Production". `weight: "compact"` shows a project in the smaller row of Selected Work.
+- `evidence`: short note such as "Production app — source not public". Never add a repo link that doesn't exist.
+- Links only appear once they are real URLs (not `ph()`).
+- Case-study sections are optional: a section containing only placeholders is hidden, except "My Role", which always shows.
+- Social preview image: `public/og.jpg` (plain typographic card).

@@ -5,7 +5,7 @@
 | File | URL | Purpose |
 |---|---|---|
 | `__root.tsx` | — | HTML shell, fonts, skip link, header, footer, `<Outlet />` |
-| `index.tsx` | `/` | Home: Hero, Selected Work, Experience, Freelance, Skills, About, Contact |
+| `index.tsx` | `/` | Home: Hero, Selected Work, Experience (incl. freelance), Skills, About, Contact |
 | `work.index.tsx` | `/work` | All published projects grouped by category |
 | `work.$slug.tsx` | `/work/:slug` | Case study for any project in `projects.ts`; unknown slug → not found (noindex) |
 | `resume.tsx` | `/resume` | Printable resume + CV download |
@@ -31,7 +31,7 @@ Every route is prerendered to static HTML at build time (`prerender.enabled` in 
 __root
   SiteHeader (Sheet for mobile menu)
   main > route page
-    HomePage > Hero, SelectedWork(ProjectCard > MediaFrame), Experience, Freelance, Skills, About, Contact
+    HomePage > Hero, SelectedWork(ProjectCard > MediaFrame), Experience(FreelanceBlock), Skills, About, Contact
     WorkPage > ProjectCard
     CaseStudy > CaseSection ×9, Links, Next project
     ResumePage
