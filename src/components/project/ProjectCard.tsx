@@ -2,19 +2,30 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/types/project";
 import { TextValue } from "@/components/common/TextValue";
+import { isPlaceholder } from "@/lib/placeholder";
+import { cn } from "@/lib/utils";
 import { MediaFrame } from "./MediaFrame";
 
-export function ProjectCard({ project, headingLevel = 3 }: { project: Project; headingLevel?: 2 | 3 }) {
+export function ProjectCard({
+  project,
+  headingLevel = 3,
+  compact = false,
+}: {
+  project: Project;
+  headingLevel?: 2 | 3;
+  compact?: boolean;
+}) {
   const Heading = headingLevel === 2 ? "h2" : "h3";
+  const realLinks = project.links.filter((l) => !isPlaceholder(l.href));
   return (
     <article className="group relative flex flex-col">
-      <MediaFrame image={project.heroImage} label={project.title} />
-      <div className="mt-5 flex items-start justify-between gap-4">
+      {!compact && <MediaFrame image={project.heroImage} label={project.title} />}
+      <div className={cn("flex items-start justify-between gap-4", !compact && "mt-5")}>
         <div className="min-w-0">
           <p className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
-            {project.category}
+            {project.type ?? project.category}
           </p>
-          <Heading className="mt-1.5 text-xl font-semibold tracking-tight">
+          <Heading className={cn("mt-1.5 font-semibold tracking-tight", compact ? "text-lg" : "text-xl")}>
             <Link
               to="/work/$slug"
               params={{ slug: project.slug }}
@@ -36,9 +47,23 @@ export function ProjectCard({ project, headingLevel = 3 }: { project: Project; h
           <TextValue value={project.role} />
         </dd>
         <dt className="text-muted-foreground">Tech</dt>
-        <dd className="text-foreground/80">{project.technologies.slice(0, 4).join(" · ")}</dd>
+        <dd className="text-foreground/80">{project.technologies.slice(0, 5).join(" · ")}</dd>
       </dl>
-      {/* Focus ring for the whole card, since the link covers it. */}
+      <p className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+        <span className="font-medium text-accent">View case study</span>
+        {realLinks.map((l) => (
+          <a
+            key={l.label}
+            href={l.href as string}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative z-10 text-foreground/80 underline-offset-4 hover:underline"
+          >
+            {l.label} ↗
+          </a>
+        ))}
+        {project.evidence && <span className="text-muted-foreground">{project.evidence}</span>}
+      </p>
       <span
         aria-hidden
         className="pointer-events-none absolute -inset-3 rounded-2xl ring-ring group-has-[a:focus-visible]:ring-2"
