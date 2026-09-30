@@ -5,11 +5,11 @@ import type { Profile } from "@/types/profile";
 export const profile: Profile = {
   name: "Muhammad Fahmi",
   title: "iOS Developer",
-  experienceYears: "5+",
+  experienceYears: "3+",
   headline: "iOS Developer building native Apple experiences.",
   supportingStatement:
     "3+ years building and shipping native iOS applications with Swift, SwiftUI, UIKit, and the Apple ecosystem.",
-  heroStatement: "5+ years building and shipping native iOS applications.",
+  heroStatement: "3+ years building and shipping native iOS applications.",
   technologyLine: ["Swift", "SwiftUI", "UIKit", "Apple Platforms"],
   location: ph("Location, e.g. city, Indonesia"),
   academyLine:

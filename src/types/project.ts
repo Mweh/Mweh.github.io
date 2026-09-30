@@ -53,4 +53,8 @@ export interface Project {
   gallery: ProjectImage[];
   links: ProjectLink[];
   caseStudy: CaseStudy;
+  /** Short evidence note on cards, e.g. why no public repo exists. */
+  evidence?: string;
+  /** "compact" projects render smaller in Selected Work. Default: large. */
+  weight?: "large" | "compact";
 }

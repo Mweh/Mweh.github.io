@@ -9,6 +9,7 @@ import type { Project } from "@/types/project";
 const projects: Project[] = [
   {
     slug: "brimo",
+    evidence: "Production app — source not public",
     title: "BRImo",
     category: "Production",
     featured: true,
@@ -36,6 +37,7 @@ const projects: Project[] = [
   },
   {
     slug: "mytelkomsel",
+    evidence: "Production app — source not public",
     title: "MyTelkomsel",
     category: "Production",
     featured: true,
@@ -100,6 +102,7 @@ const projects: Project[] = [
   },
   {
     slug: "mindmories",
+    weight: "compact",
     title: "MindMories",
     category: "Independent",
     featured: true,
@@ -134,6 +137,7 @@ const projects: Project[] = [
   },
   {
     slug: "marble",
+    weight: "compact",
     title: "Marble",
     category: "Apple Developer Academy",
     featured: true,
@@ -174,6 +178,7 @@ const projects: Project[] = [
   },
   {
     slug: "one-more-inch",
+    weight: "compact",
     title: "One More Inch",
     category: "Apple Developer Academy",
     featured: true,
