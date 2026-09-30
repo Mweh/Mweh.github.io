@@ -4,6 +4,7 @@ import { publishedProjects } from "@/data/projects";
 import { Chip, Container, Eyebrow } from "@/components/common/Primitives";
 import { TextValue } from "@/components/common/TextValue";
 import { ExternalLink } from "@/components/common/ExternalLink";
+import { isPlaceholder } from "@/lib/placeholder";
 import { useReveal } from "@/hooks/use-reveal";
 import { MediaFrame } from "./MediaFrame";
 
@@ -55,6 +56,11 @@ function CaseSection({ index, title, question, paragraphs }: {
 export function CaseStudy({ project }: { project: Project }) {
   const idx = publishedProjects.findIndex((p) => p.slug === project.slug);
   const next = publishedProjects[(idx + 1) % publishedProjects.length];
+  // Show a section only when it has real content; "My Role" always shows so a gap stays visible.
+  const visible = sections.filter(
+    (s) => s.key === "role" || project.caseStudy[s.key].some((p) => !isPlaceholder(p)),
+  );
+  const realLinks = project.links.filter((l) => !isPlaceholder(l.href));
 
   return (
     <article>
@@ -70,7 +76,7 @@ export function CaseStudy({ project }: { project: Project }) {
           <p className="mt-6 text-xl text-pretty text-muted-foreground">{project.summary}</p>
         </header>
 
-        <dl className="mt-12 grid gap-6 border-y py-8 text-sm sm:grid-cols-3">
+        <dl className="mt-12 grid gap-6 border-y py-8 text-sm sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <dt className="text-muted-foreground">Role</dt>
             <dd className="mt-1 font-medium"><TextValue value={project.role} /></dd>
@@ -81,7 +87,13 @@ export function CaseStudy({ project }: { project: Project }) {
           </div>
           <div>
             <dt className="text-muted-foreground">Type</dt>
-            <dd className="mt-1 font-medium">{project.category}</dd>
+            <dd className="mt-1 font-medium">{project.type ?? project.category}</dd>
+          </div>
+          <div>
+            <dt className="text-muted-foreground">Contribution</dt>
+            <dd className="mt-1 font-medium">
+              <TextValue value={project.caseStudy.role[0] ?? project.role} />
+            </dd>
           </div>
         </dl>
 
@@ -99,7 +111,7 @@ export function CaseStudy({ project }: { project: Project }) {
         />
 
         <div className="mt-16">
-          {sections.map((s, i) => (
+          {visible.map((s, i) => (
             <CaseSection
               key={s.key}
               index={i}
@@ -108,14 +120,15 @@ export function CaseStudy({ project }: { project: Project }) {
               paragraphs={project.caseStudy[s.key]}
             />
           ))}
-          <section aria-labelledby="s-10-t" className="border-t py-12">
+          {realLinks.length > 0 && (
+          <section aria-labelledby="s-links-t" className="border-t py-12">
             <div className="grid gap-4 md:grid-cols-[14rem_1fr] md:gap-10">
               <div>
-                <p className="font-mono text-sm text-accent">10</p>
-                <h2 id="s-10-t" className="mt-1 text-xl font-semibold tracking-tight">Links</h2>
+                <p className="font-mono text-sm text-accent">{num(visible.length)}</p>
+                <h2 id="s-links-t" className="mt-1 text-xl font-semibold tracking-tight">Links</h2>
               </div>
               <ul className="space-y-3 text-lg">
-                {project.links.map((l) => (
+                {realLinks.map((l) => (
                   <li key={l.label} className="flex flex-wrap items-center gap-3">
                     <span className="text-muted-foreground">{l.label}</span>
                     <ExternalLink href={l.href} className="text-accent underline-offset-4 hover:underline">
@@ -126,6 +139,10 @@ export function CaseStudy({ project }: { project: Project }) {
               </ul>
             </div>
           </section>
+          )}
+          {project.evidence && (
+            <p className="border-t py-8 text-sm text-muted-foreground">{project.evidence}</p>
+          )}
         </div>
       </Container>
 
