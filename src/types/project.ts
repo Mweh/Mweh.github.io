@@ -55,6 +55,8 @@ export interface Project {
   caseStudy: CaseStudy;
   /** Short evidence note on cards, e.g. why no public repo exists. */
   evidence?: string;
+  /** Card label, e.g. "Professional / Production". Defaults to category. */
+  type?: string;
   /** "compact" projects render smaller in Selected Work. Default: large. */
   weight?: "large" | "compact";
 }
