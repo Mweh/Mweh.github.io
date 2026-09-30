@@ -5,10 +5,21 @@ import { profile } from "@/data/profile";
 import { Container } from "@/components/common/Primitives";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
+/** Home sections scroll in place; Resume is its own page. */
 const nav = [
-  { label: "Work", to: "/work" },
+  { label: "Work", hash: "work" },
+  { label: "Experience", hash: "experience" },
+  { label: "About", hash: "about" },
   { label: "Resume", to: "/resume" },
+  { label: "Contact", hash: "contact" },
 ] as const;
+
+const NavLink = ({ item, className, onClick }: { item: (typeof nav)[number]; className: string; onClick?: () => void }) =>
+  "to" in item ? (
+    <Link to={item.to} className={className} onClick={onClick}>{item.label}</Link>
+  ) : (
+    <Link to="/" hash={item.hash} className={className} onClick={onClick}>{item.label}</Link>
+  );
 
 const linkClass =
   "text-sm text-muted-foreground transition-colors hover:text-foreground data-[status=active]:text-foreground";
@@ -23,13 +34,8 @@ export function SiteHeader() {
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-8 sm:flex">
           {nav.map((item) => (
-            <Link key={item.to} to={item.to} className={linkClass}>
-              {item.label}
-            </Link>
+            <NavLink key={item.label} item={item} className={linkClass} />
           ))}
-          <Link to="/" hash="contact" className={linkClass}>
-            Contact
-          </Link>
         </nav>
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger
@@ -45,23 +51,8 @@ export function SiteHeader() {
                 Home
               </Link>
               {nav.map((item) => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  onClick={() => setOpen(false)}
-                  className="py-3 text-2xl font-semibold"
-                >
-                  {item.label}
-                </Link>
+                <NavLink key={item.label} item={item} onClick={() => setOpen(false)} className="py-3 text-2xl font-semibold" />
               ))}
-              <Link
-                to="/"
-                hash="contact"
-                onClick={() => setOpen(false)}
-                className="py-3 text-2xl font-semibold"
-              >
-                Contact
-              </Link>
             </nav>
           </SheetContent>
         </Sheet>

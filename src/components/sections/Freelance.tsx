@@ -1,6 +1,6 @@
 import { freelance, freelanceStrengths } from "@/data/freelance";
 import { profile } from "@/data/profile";
-import { Chip, Section, SectionHeading } from "@/components/common/Primitives";
+import { Chip } from "@/components/common/Primitives";
 import { TextValue } from "@/components/common/TextValue";
 import type { FreelanceEntry } from "@/types/experience";
 
@@ -14,16 +14,13 @@ const fields: Array<[keyof FreelanceEntry, string]> = [
   ["outcome", "Outcome"],
 ];
 
-export function Freelance() {
+/** International freelance block, rendered inside the Experience section. */
+export function FreelanceBlock() {
   return (
-    <Section id="freelance" labelledBy="freelance-title" className="border-t bg-surface">
-      <SectionHeading
-        id="freelance-title"
-        eyebrow="International Freelance"
-        title="Netherlands · United States"
-        intro={profile.freelanceStatement}
-      />
-      <ul aria-label="Ways of working" className="mb-12 flex flex-wrap gap-2">
+    <div id="freelance" className="mt-16 scroll-mt-24">
+      <h3 className="text-2xl font-semibold tracking-tight">International freelance · Netherlands · United States</h3>
+      <p className="mt-3 max-w-2xl text-pretty text-muted-foreground">{profile.freelanceStatement}</p>
+      <ul aria-label="Ways of working" className="mt-6 mb-10 flex flex-wrap gap-2">
         {freelanceStrengths.map((s) => (
           <li key={s}>
             <Chip>{s}</Chip>
@@ -32,13 +29,13 @@ export function Freelance() {
       </ul>
       <div className="grid gap-6 md:grid-cols-2">
         {freelance.map((f) => (
-          <article key={f.id} className="rounded-2xl border bg-card p-6 sm:p-8">
+          <article key={f.id} className="rounded-2xl border bg-surface p-6 sm:p-8">
             <p className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
               {f.country}
             </p>
-            <h3 className="mt-2 text-xl font-semibold tracking-tight">
+            <h4 className="mt-2 text-xl font-semibold tracking-tight">
               <TextValue value={f.client} />
-            </h3>
+            </h4>
             <dl className="mt-6 space-y-3 text-sm">
               {fields.map(([key, label]) => (
                 <div key={key} className="grid gap-1 sm:grid-cols-[9rem_1fr]">
@@ -52,6 +49,6 @@ export function Freelance() {
           </article>
         ))}
       </div>
-    </Section>
+    </div>
   );
 }

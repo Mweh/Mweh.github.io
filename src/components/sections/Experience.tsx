@@ -3,6 +3,7 @@ import { experience } from "@/data/experience";
 import { getProject } from "@/data/projects";
 import { Section, SectionHeading } from "@/components/common/Primitives";
 import { TextValue } from "@/components/common/TextValue";
+import { FreelanceBlock } from "./Freelance";
 
 export function Experience() {
   return (
@@ -44,6 +45,7 @@ export function Experience() {
           </li>
         ))}
       </ol>
+      <FreelanceBlock />
     </Section>
   );
 }
