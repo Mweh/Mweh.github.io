@@ -11,7 +11,7 @@
 
 # Agent guide
 
-Read `README.md` and `docs/ARCHITECTURE.md` first.
+Read `README.md`, `docs/ARCHITECTURE.md`, and the PRDs in `docs/prd/` first.
 
 ## Architecture rules
 

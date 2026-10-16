@@ -57,6 +57,7 @@ Append one object to the array in `src/data/projects.ts`. The card, `/work/<slug
 
 ## Docs
 
+- `docs/prd/` — product requirement documents (purpose, content, UX, design, stack, performance, code quality, SEO, deployment, roadmap)
 - `AGENTS.md` — rules for coding agents
 - `docs/ARCHITECTURE.md` — routing, data model, components, styling, assets
 - `docs/CONTENT_GUIDE.md` — writing and adding content
