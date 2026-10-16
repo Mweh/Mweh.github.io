@@ -30,7 +30,7 @@ Load instantly on a mid-range phone on mobile data — recruiters often open lin
 
 ## How to measure
 
-`npm run build && npx serve dist/client`, then run Lighthouse in Chrome DevTools (mobile preset) on `/` and one case study.
+`npm run build && npx serve .output/public`, then run Lighthouse in Chrome DevTools (mobile preset) on `/` and one case study.
 
 ## Current status
 

@@ -25,6 +25,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
     pages,
-    prerender: { enabled: true, autoStaticPathsDiscovery: false },
+    // crawlLinks: false - only the pages listed above are generated. Otherwise the
+    // generator follows links (CV PDF, in-page anchors) and fails the build.
+    prerender: { enabled: true, autoStaticPathsDiscovery: false, crawlLinks: false },
   },
 });

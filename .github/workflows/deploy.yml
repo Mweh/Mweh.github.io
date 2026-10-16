@@ -29,9 +29,14 @@ jobs:
       - run: npm run build
         env:
           VITE_SITE_URL: https://${{ github.event.repository.owner.login }}.github.io
+      # The static site lands in .output/public (or dist/client, depending on the build target).
+      - id: out
+        run: |
+          if [ -f .output/public/index.html ]; then echo "dir=.output/public" >> "$GITHUB_OUTPUT";
+          else echo "dir=dist/client" >> "$GITHUB_OUTPUT"; fi
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/client
+          path: ${{ steps.out.outputs.dir }}
   deploy:
     needs: build
     runs-on: ubuntu-latest

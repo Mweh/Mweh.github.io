@@ -11,7 +11,7 @@ TanStack Start (React 19, SSR) · Vite · TypeScript · Tailwind CSS v4. No CMS,
 ```sh
 npm ci
 npm run dev      # local dev server
-npm run build    # static production build -> dist/client
+npm run build    # static production build -> .output/public
 npm run preview
 ```
 
@@ -19,11 +19,11 @@ npm run preview
 
 ## Deployment (GitHub Pages, free)
 
-The site builds to plain static files in `dist/client` — no server, database, or Lovable account needed at runtime. Every page, including case studies like `/work/koalafit`, is a real HTML file, so direct links and refreshes never 404.
+The site builds to plain static files in `.output/public` — no server, database, or Lovable account needed at runtime. Every page, including case studies like `/work/koalafit`, is a real HTML file, so direct links and refreshes never 404.
 
 1. Create a **public** repository named `<your-github-username>.github.io` and push this code to its `main` branch.
 2. In the repo: **Settings → Pages → Source: GitHub Actions**.
-3. Push to `main` — the workflow in `.github/workflows/deploy.yml` runs `npm ci && npm run build` and publishes `dist/client` to `https://<your-github-username>.github.io`.
+3. Push to `main` — the workflow in `.github/workflows/deploy.yml` runs `npm ci && npm run build` and publishes `.output/public` to `https://<your-github-username>.github.io`.
 
 The site origin is set via `VITE_SITE_URL` (the workflow sets it automatically from your username; locally it defaults to `https://mweh.github.io` — change it in `src/data/profile.ts` if your username differs). `sitemap.xml` and `robots.txt` are generated at build time from the same data.
 
@@ -31,7 +31,7 @@ To test the production build exactly as GitHub Pages serves it:
 
 ```sh
 npm run build
-npx serve dist/client   # then open /work/koalafit directly in a fresh tab
+npx serve .output/public   # then open /work/koalafit directly in a fresh tab
 ```
 
 Note: `@lovable.dev/vite-tanstack-config` is a public npm package used only at build time (it bundles the Vite plugins). It is not shipped to visitors and needs no Lovable account; to remove it, replace it with the equivalent Vite plugins (`@tanstack/react-start/plugin`, `@vitejs/plugin-react`, `@tailwindcss/vite`, `vite-tsconfig-paths`).

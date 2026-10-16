@@ -14,7 +14,7 @@
 
 ## Deployment (static)
 
-Every route is prerendered to static HTML at build time (`prerender.enabled` in `vite.config.ts`; page list = `projectSlugs` there, kept in sync with published projects in `src/data/projects.ts`). Output lands in `dist/client`: `work/koalafit/index.html` etc., so deep links work on any static host. `scripts/generate-sitemap.ts` (postbuild) writes `sitemap.xml` and `robots.txt` from the same data; `public/404.html` and `public/.nojekyll` are copied as-is. Deploy target: GitHub Pages user site via `.github/workflows/deploy.yml` (`npm ci && npm run build`, no secrets). The site origin comes from `VITE_SITE_URL`, defaulting to the value in `src/data/profile.ts`.
+Every route is prerendered to static HTML at build time (`prerender.enabled` in `vite.config.ts`; page list = `projectSlugs` there, kept in sync with published projects in `src/data/projects.ts`). Output lands in `.output/public`: `work/koalafit/index.html` etc., so deep links work on any static host. `scripts/generate-sitemap.mjs` (postbuild) writes `sitemap.xml` and `robots.txt` from the same data; `public/404.html` and `public/.nojekyll` are copied as-is. Deploy target: GitHub Pages user site via `.github/workflows/deploy.yml` (`npm ci && npm run build`, no secrets). The site origin comes from `VITE_SITE_URL`, defaulting to the value in `src/data/profile.ts`.
 
 ## Data model
 
