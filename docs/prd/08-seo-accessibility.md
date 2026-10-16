@@ -25,4 +25,4 @@
 
 ## Current status
 
-Implemented. Canonical URLs use `VITE_SITE_URL` (default `https://muhammadfahmi.github.io`) — confirm the real GitHub username.
+Implemented. Canonical URLs use `VITE_SITE_URL` (default `https://mweh.github.io`) — confirm the real GitHub username.
