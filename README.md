@@ -25,7 +25,7 @@ The site builds to plain static files in `dist/client` — no server, database, 
 2. In the repo: **Settings → Pages → Source: GitHub Actions**.
 3. Push to `main` — the workflow in `.github/workflows/deploy.yml` runs `npm ci && npm run build` and publishes `dist/client` to `https://<your-github-username>.github.io`.
 
-The site origin is set via `VITE_SITE_URL` (the workflow sets it automatically from your username; locally it defaults to `https://muhammadfahmi.github.io` — change it in `src/data/profile.ts` if your username differs). `sitemap.xml` and `robots.txt` are generated at build time from the same data.
+The site origin is set via `VITE_SITE_URL` (the workflow sets it automatically from your username; locally it defaults to `https://mweh.github.io` — change it in `src/data/profile.ts` if your username differs). `sitemap.xml` and `robots.txt` are generated at build time from the same data.
 
 To test the production build exactly as GitHub Pages serves it:
 

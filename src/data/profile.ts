@@ -23,10 +23,10 @@ export const profile: Profile = {
     "I'm currently part of Apple Developer Academy 2026 @ ILB, expanding product thinking, Apple ecosystem expertise, and prototyping.",
   ],
   // portrait: { src: "/images/profile/portrait.jpg", alt: "Portrait of Muhammad Fahmi" },
-  cvUrl: ph("CV PDF — place file at public/cv/muhammad-fahmi-cv.pdf and set cvUrl"),
+  cvUrl: "/cv/muhammad-fahmi-cv.pdf",
   // Production origin (no trailing slash). Override at build time with
   // VITE_SITE_URL; defaults to the GitHub Pages user site.
   siteUrl:
     (import.meta.env["VITE_SITE_URL"] as string | undefined) ??
-    "https://muhammadfahmi.github.io",
+    "https://mweh.github.io",
 };
