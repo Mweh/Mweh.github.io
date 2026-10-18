@@ -2,6 +2,7 @@ import { freelance, freelanceStrengths } from "@/data/freelance";
 import { profile } from "@/data/profile";
 import { Chip } from "@/components/common/Primitives";
 import { TextValue } from "@/components/common/TextValue";
+import { isPlaceholder } from "@/lib/placeholder";
 import type { FreelanceEntry } from "@/types/experience";
 
 const fields: Array<[keyof FreelanceEntry, string]> = [
@@ -37,7 +38,7 @@ export function FreelanceBlock() {
               <TextValue value={f.client} />
             </h4>
             <dl className="mt-6 space-y-3 text-sm">
-              {fields.map(([key, label]) => (
+              {fields.filter(([key]) => !isPlaceholder(f[key])).map(([key, label]) => (
                 <div key={key} className="grid gap-1 sm:grid-cols-[9rem_1fr]">
                   <dt className="text-muted-foreground">{label}</dt>
                   <dd>

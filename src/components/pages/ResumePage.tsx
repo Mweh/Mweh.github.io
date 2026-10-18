@@ -6,7 +6,6 @@ import { featuredProjects } from "@/data/projects";
 import { socialLinks } from "@/data/socialLinks";
 import { Container, Eyebrow } from "@/components/common/Primitives";
 import { TextValue } from "@/components/common/TextValue";
-import { isPlaceholder } from "@/lib/placeholder";
 import { Button } from "@/components/ui/button";
 
 export function ResumePage() {
@@ -28,15 +27,11 @@ export function ResumePage() {
           ))}
         </ul>
         <div className="no-print mt-8 flex flex-wrap items-center gap-3">
-          {isPlaceholder(profile.cvUrl) ? (
-            <TextValue value={profile.cvUrl} />
-          ) : (
-            <Button asChild className="rounded-full">
+          <Button asChild className="rounded-full">
               <a href={profile.cvUrl} download>
                 Download CV <Download aria-hidden />
               </a>
             </Button>
-          )}
           <Button variant="outline" className="rounded-full" onClick={() => window.print()}>
             Print <Printer aria-hidden />
           </Button>
