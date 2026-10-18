@@ -106,6 +106,7 @@ export function CaseStudy({ project }: { project: Project }) {
         <MediaFrame
           image={project.heroImage}
           label={project.title}
+          caption={project.technologies.join(" · ")}
           priority
           className="mt-12 aspect-[16/9]"
         />

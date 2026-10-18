@@ -8,7 +8,6 @@ import { isPlaceholder } from "@/lib/placeholder";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
-  const cvReady = !isPlaceholder(profile.cvUrl);
   return (
     <section aria-labelledby="hero-title" className="pt-16 pb-20 sm:pt-28 sm:pb-28">
       <Container>
@@ -43,19 +42,11 @@ export function Hero() {
                 View Selected Work <ArrowDown aria-hidden />
               </Link>
             </Button>
-            {cvReady ? (
-              <Button asChild size="lg" variant="outline" className="h-12 rounded-full px-6">
-                <a href={profile.cvUrl as string} download>
+            <Button asChild size="lg" variant="outline" className="h-12 rounded-full px-6">
+                <a href={profile.cvUrl} download>
                   Download CV <Download aria-hidden />
                 </a>
               </Button>
-            ) : (
-              <Button asChild size="lg" variant="outline" className="h-12 rounded-full px-6">
-                <Link to="/resume">
-                  Download CV <Download aria-hidden />
-                </Link>
-              </Button>
-            )}
           </div>
           <ul aria-label="Profiles" className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm">
             {socialLinks.map((l) =>

@@ -6,7 +6,7 @@ export const profile: Profile = {
   name: "Muhammad Fahmi",
   title: "iOS Developer",
   experienceYears: "3+",
-  headline: "iOS Developer building native Apple experiences.",
+  headline: "Native iOS apps for banking, telco and the App Store.",
   supportingStatement:
     "3+ years building and shipping native iOS applications with Swift, SwiftUI, UIKit, and the Apple ecosystem.",
   heroStatement: "3+ years building and shipping native iOS applications.",

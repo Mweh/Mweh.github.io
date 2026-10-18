@@ -25,3 +25,11 @@
 ## Won't do
 
 - Blog, CMS, contact form, backend, analytics requiring cookies banners.
+
+## Audit 2026-10-18 (done)
+
+- Published site shows "Available on request" for missing facts; dashed "To be added" labels appear only in development.
+- Unconfirmed skills removed (GameKit, Core Haptics, CI/CD, Modularization, UIKit interoperability) — re-add only if confirmed.
+- Screenshot frames replaced by title tiles until real screenshots exist.
+- Unused UI primitives deleted; tests in `src/data/projects.test.ts` (`bun test src/data`).
+- Still open: Apple touch icon (needs a real icon image), all owner-supplied content above.
