@@ -1,7 +1,7 @@
 import type { SkillGroup } from "@/types/experience";
 
 export const skillGroups: SkillGroup[] = [
-  { title: "iOS Development", items: ["Swift", "SwiftUI", "UIKit", "UIKit interoperability"] },
+  { title: "iOS Development", items: ["Swift", "SwiftUI", "UIKit"] },
   {
     title: "Apple Frameworks",
     items: [
@@ -13,13 +13,11 @@ export const skillGroups: SkillGroup[] = [
       "ManagedSettings",
       "DeviceActivity",
       "SpriteKit",
-      "GameKit",
-      "Core Haptics",
     ],
   },
   {
     title: "Architecture",
-    items: ["MVVM", "Clean Architecture", "API integration", "Modularization", "Maintainable codebases"],
+    items: ["MVVM", "Clean Architecture", "API integration", "Maintainable codebases"],
   },
-  { title: "Delivery", items: ["Git", "App Store Connect", "TestFlight", "CI/CD"] },
+  { title: "Delivery", items: ["Git", "App Store Connect", "TestFlight"] },
 ];
