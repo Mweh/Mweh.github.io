@@ -14,7 +14,7 @@ export interface Profile {
   about: string[];
   portrait?: { src: string; alt: string };
   /** Path to the CV PDF in /public, or a placeholder until provided. */
-  cvUrl: Text;
+  cvUrl: string;
   /** Absolute production URL, no trailing slash. Used for canonical URLs and sitemap. */
   siteUrl: string;
 }
