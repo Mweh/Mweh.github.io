@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
       description: profile.supportingStatement,
       path: "/",
       type: "profile",
-      image: `${profile.siteUrl}/og.jpg`,
+      image: `${profile.siteUrl}/images/profile/og-header.jpg`,
     }),
     scripts: [
       jsonLd({

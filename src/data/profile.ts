@@ -22,7 +22,13 @@ export const profile: Profile = {
     "Alongside that, I work independently with international clients from the Netherlands and the United States, remotely and across time zones.",
     "I'm currently part of Apple Developer Academy 2026 @ ILB, expanding product thinking, Apple ecosystem expertise, and prototyping.",
   ],
-  // portrait: { src: "/images/profile/portrait.jpg", alt: "Portrait of Muhammad Fahmi" },
+  portrait: { src: "/images/profile/portrait.webp", alt: "Muhammad Fahmi sitting at a desk next to a screen showing the Marble app" },
+  banner: {
+    src: "/images/profile/header.webp",
+    alt: "iOS Engineer — Modular, reusable, testable, performant. From Cold Start to Smooth Finish.",
+    width: 1400,
+    height: 350,
+  },
   cvUrl: "/cv/muhammad-fahmi-cv.pdf",
   // Production origin (no trailing slash). Override at build time with
   // VITE_SITE_URL; defaults to the GitHub Pages user site.
