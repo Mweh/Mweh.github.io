@@ -13,7 +13,7 @@
 | Medium | Netherlands and United States freelance details (or neutral descriptions if confidential) | `src/data/freelance.ts` |
 | Medium | App Store / GitHub links for KoalaFit, MindMories | `src/data/projects.ts` |
 | Medium | Real app screenshots | `public/images/projects/<slug>/` |
-| Low | Portrait photo | `public/images/profile/` |
+| Done | Portrait photo and header banner | `public/images/profile/` |
 | Low | Whether Arterious should be public | `published` flag |
 
 ## Future work (optional)

@@ -13,7 +13,18 @@ export function ResumePage() {
     <Container className="max-w-3xl py-16 sm:py-24">
       <header>
         <Eyebrow>Resume</Eyebrow>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">{profile.name}</h1>
+        <div className="mt-3 flex items-center gap-5">
+          {profile.portrait && (
+            <img
+              src={profile.portrait.src}
+              alt={profile.portrait.alt}
+              width={80}
+              height={80}
+              className="size-16 shrink-0 rounded-full border object-cover object-top sm:size-20"
+            />
+          )}
+          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">{profile.name}</h1>
+        </div>
         <p className="mt-2 text-lg text-muted-foreground">
           {profile.title} · {profile.experienceYears} years · <TextValue value={profile.location} />
         </p>

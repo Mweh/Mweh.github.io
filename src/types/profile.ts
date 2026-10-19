@@ -13,6 +13,7 @@ export interface Profile {
   freelanceStatement: string;
   about: string[];
   portrait?: { src: string; alt: string };
+  banner?: { src: string; alt: string; width: number; height: number };
   /** Path to the CV PDF in /public, or a placeholder until provided. */
   cvUrl: string;
   /** Absolute production URL, no trailing slash. Used for canonical URLs and sitemap. */

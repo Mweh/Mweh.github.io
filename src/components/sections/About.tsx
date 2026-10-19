@@ -4,6 +4,16 @@ import { Section, SectionHeading } from "@/components/common/Primitives";
 export function About() {
   return (
     <Section id="about" labelledBy="about-title" className="border-t">
+      {profile.banner && (
+        <img
+          src={profile.banner.src}
+          alt={profile.banner.alt}
+          width={profile.banner.width}
+          height={profile.banner.height}
+          loading="lazy"
+          className="mb-12 h-auto w-full rounded-2xl border"
+        />
+      )}
       <div className="grid gap-12 md:grid-cols-[1fr_18rem] md:gap-16">
         <div>
           <SectionHeading id="about-title" eyebrow="About" title="Product-minded, native-first." />
