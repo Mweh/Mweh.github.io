@@ -8,10 +8,10 @@
 | Done | Email, LinkedIn, GitHub, Upwork URLs supplied | `src/data/socialLinks.ts` |
 | Done | CV PDF supplied | `public/cv/`, `profile.cvUrl` |
 | Done | GitHub username Mweh and site URL confirmed | `src/data/profile.ts` default |
-| High | Qita by BRI and MyTelkomsel role, responsibilities, dates | `src/data/projects.ts`, `experience.ts` |
+| Done / Medium | Qita by BRI and MyTelkomsel responsibilities supplied; dates still needed | `src/data/projects.ts`, `experience.ts` |
 | Medium | Employment dates for all entries | `src/data/experience.ts` |
 | Medium | Location | `src/data/profile.ts` |
-| Medium | Netherlands and United States freelance details (or neutral descriptions if confidential) | `src/data/freelance.ts` |
+| Done / Medium | Revigurize (Netherlands) and Love In The Sky (United States) named with official descriptions and media; personal contributions and dates still needed | `src/data/freelance.ts`, `projects.ts` |
 | Done / Medium | App Store links supplied for KoalaFit, MindMories, Qita by BRI, MyTelkomsel; public GitHub project links still needed | `src/data/projects.ts` |
 | Medium | Real app screenshots | `public/images/projects/<slug>/` |
 | Done | Portrait photo and header banner | `public/images/profile/` |

@@ -12,6 +12,7 @@ export interface ExperienceEntry {
 
 export interface FreelanceEntry {
   id: string;
+  projectSlug?: string;
   country: string;
   client: Text;
   industry: Text;

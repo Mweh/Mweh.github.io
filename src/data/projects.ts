@@ -1,6 +1,7 @@
 import { ph } from "@/lib/placeholder";
 import type { Project } from "@/types/project";
 import { projectMedia } from "./projectMedia";
+import { appStoreDescriptions } from "./appStoreDescriptions";
 
 /**
  * All projects. Add a project by appending one object — the card, case-study page,
@@ -22,14 +23,19 @@ const projects: Project[] = [
     description: "Native iOS development on a production-scale financial application.",
     summary:
       "Professional iOS development on Qita by BRI, a production financial application.",
-    technologies: ["Swift", "iOS"],
+    technologies: ["Swift", "UIKit", "SnapKit", "Mockoon", "API integration"],
     heroImage: projectMedia["qita-by-bri"]?.heroImage,
     gallery: projectMedia["qita-by-bri"]?.gallery ?? [],
     links: [{ label: "App Store", href: "https://apps.apple.com/id/app/qita-by-bri/id6747552980" }],
     caseStudy: {
       context: ["Qita by BRI is a production financial application on iOS."],
       problem: [ph("Problem or goal of the work you contributed to")],
-      role: [ph("Responsibilities on the Qita by BRI iOS team")],
+       role: [
+         "Participated in Squad Madrid (investment feature) and Squad Nairobi (onboarding feature), integrating new APIs, implementing revamped UI, and fixing bugs during UAT.",
+         "Revamped BRImo’s legacy UI into a modern, improved user experience using UIKit and SnapKit, aligning with new design standards.",
+         "Built new reusable UI components, implemented a Mockoon-based API mocking helper, and enabled hot-reload compatibility for faster development.",
+         "Optimized performance by cleaning legacy code, refactoring UI flow, and resolving inefficiencies in view rendering and logic handling.",
+       ],
       approach: [ph("How you approached the work")],
       engineering: [ph("Architecture, frameworks and technical decisions you can share")],
       productUx: [ph("Product and UX decisions you were involved in")],
@@ -51,16 +57,24 @@ const projects: Project[] = [
     role: "iOS Developer",
     description: "Native iOS development on a production telecommunications application.",
     summary: "Professional native iOS development on the MyTelkomsel production application.",
-    technologies: ["Swift", "iOS"],
+    technologies: ["Swift", "UIKit", "SnapKit", "RxSwift", "MVVM-C", "Figma", "GitLab CI/CD", "Git", "GitLens", "Mockoon", "Firebase Remote Config", "App Store Connect", "Confluence", "Jira", "Miro"],
     heroImage: projectMedia["mytelkomsel"]?.heroImage,
     gallery: projectMedia["mytelkomsel"]?.gallery ?? [],
     links: [{ label: "App Store", href: "https://apps.apple.com/id/app/mytelkomsel/id651412430" }],
     caseStudy: {
       context: ["MyTelkomsel is a production application on iOS."],
       problem: [ph("Problem or goal of the work you contributed to")],
-      role: [ph("Responsibilities on MyTelkomsel")],
+       role: [
+         "Maintained the MyTelkomsel app on the App Store for Telkomsel, Indonesia’s largest cellular operator.",
+         "Participated in daily scrum and technical meetings with the iOS, systems analyst, scrum master, product owner, Android, and Web API teams.",
+         "Planned monthly sprints, allocating two weeks to developing new features and two weeks to bug fixing.",
+         "Developed new features and fixed bugs in the production app.",
+       ],
       approach: [ph("How you approached the work")],
-      engineering: [ph("Architecture, frameworks and technical decisions you can share")],
+       engineering: [
+         "Used the MVVM-C design pattern, with UIKit, SnapKit, and RxSwift.",
+         "Tools included Figma, GitLab CI/CD, Git, GitLens, Mockoon, Firebase Remote Config, App Store Connect, Confluence, Jira, and Miro.",
+       ],
       productUx: [ph("Product and UX decisions you were involved in")],
       challenges: [ph("What was difficult")],
       outcome: [ph("What was shipped or achieved")],
@@ -76,7 +90,7 @@ const projects: Project[] = [
     order: 3,
     published: true,
     year: ph("Release year"),
-    role: ph("Role, e.g. iOS Developer"),
+    role: "iOS Developer — technical development and App Store delivery",
     description: "A shipped App Store app combining HealthKit, Apple Watch and AI-assisted onboarding.",
     summary:
       "KoalaFit is a shipped App Store project built with SwiftUI and MVVM, integrating HealthKit, Apple Watch, AI-powered onboarding with Gemini, and food scanning.",
@@ -93,7 +107,7 @@ const projects: Project[] = [
         ph("One-sentence description of what KoalaFit does for its users"),
       ],
       problem: [ph("The product problem KoalaFit solves, and for whom")],
-      role: [ph("Your exact contribution — solo or team, and which parts you owned")],
+       role: ["Owned all technical development for KoalaFit and handled App Store submission, including responding to Apple’s review requirements."],
       approach: [ph("How you approached the product and the build")],
       engineering: [
         "The app follows an MVVM architecture in SwiftUI.",
@@ -117,21 +131,22 @@ const projects: Project[] = [
     order: 4,
     published: true,
     year: ph("Year"),
-    role: ph("Role"),
+    role: "CI/CD implementation",
     description: "A SwiftUI app built on PhotoKit, Vision, CoreLocation and UserNotifications.",
     summary:
       "MindMories is an independent iOS project in SwiftUI and MVVM, integrating native Apple frameworks: PhotoKit, Vision, CoreLocation and UserNotifications.",
-    technologies: ["SwiftUI", "MVVM", "PhotoKit", "Vision", "CoreLocation", "UserNotifications"],
+    technologies: ["SwiftUI", "MVVM", "PhotoKit", "Vision", "CoreLocation", "UserNotifications", "CI/CD", "TestFlight"],
     heroImage: projectMedia["mindmories"]?.heroImage,
     gallery: projectMedia["mindmories"]?.gallery ?? [],
     links: [
       { label: "App Store", href: "https://apps.apple.com/id/app/mindmories/id6786116342" },
+      { label: "TestFlight automation article", href: "https://medium.com/@fahmianton/i-thought-setting-up-testflight-automation-would-take-30-minutes-40c3cca04fd5" },
       { label: "GitHub", href: ph("Repository URL, if public") },
     ],
     caseStudy: {
       context: [ph("What MindMories is and who it is for")],
       problem: [ph("The problem it solves")],
-      role: [ph("Your exact contribution")],
+       role: ["Implemented CI/CD for MindMories, with the TestFlight automation setup documented in the linked article."],
       approach: [ph("How you approached it")],
       engineering: [
         "Built in SwiftUI with an MVVM architecture.",
@@ -196,6 +211,64 @@ const projects: Project[] = [
     },
   },
   {
+    slug: "revigurize",
+    title: "Revigurize",
+    category: "International Freelance",
+    type: "Freelance / Netherlands",
+    featured: false,
+    order: 6,
+    published: true,
+    year: ph("Freelance period"),
+    role: "Freelance iOS Developer",
+    description: "A seven-month hair-growth companion with guided monthly photos, progress comparisons, reminders, and English and Dutch support.",
+    summary: "Revigurize is a hair-growth tracking companion. International freelance iOS work for a client in the Netherlands.",
+    appStoreDescription: appStoreDescriptions.revigurize,
+    technologies: [],
+    heroImage: projectMedia["revigurize"]?.heroImage,
+    gallery: projectMedia["revigurize"]?.gallery ?? [],
+    links: [{ label: "App Store", href: "https://apps.apple.com/us/app/revigurize/id6757760154" }],
+    caseStudy: {
+      context: ["Freelance iOS project for a client in the Netherlands. The product description below is sourced from its official App Store listing."],
+      problem: [ph("Client problem")],
+      role: [ph("Your specific contribution to Revigurize")],
+      approach: [ph("Approach")],
+      engineering: [ph("Technologies and technical decisions")],
+      productUx: [ph("Product and UX contribution")],
+      challenges: [ph("Challenges")],
+      outcome: [ph("Outcome")],
+      reflection: [ph("Reflection")],
+    },
+  },
+  {
+    slug: "love-in-the-sky",
+    title: "Love In The Sky",
+    category: "International Freelance",
+    type: "Freelance / United States",
+    featured: false,
+    order: 7,
+    published: true,
+    year: ph("Freelance period"),
+    role: "Freelance iOS Developer",
+    description: "A dating and social-connection app for aviation professionals, with aviation-focused profiles, crew matching, and layover connections.",
+    summary: "Love In The Sky connects aviation professionals for dating and social connections. International freelance iOS work for a client in the United States.",
+    appStoreDescription: appStoreDescriptions["love-in-the-sky"],
+    technologies: [],
+    heroImage: projectMedia["love-in-the-sky"]?.heroImage,
+    gallery: projectMedia["love-in-the-sky"]?.gallery ?? [],
+    links: [{ label: "App Store", href: "https://apps.apple.com/us/app/love-in-the-sky/id6791453047" }],
+    caseStudy: {
+      context: ["Freelance iOS project for a client in the United States. The product description below is sourced from its official App Store listing."],
+      problem: [ph("Client problem")],
+      role: [ph("Your specific contribution to Love In The Sky")],
+      approach: [ph("Approach")],
+      engineering: [ph("Technologies and technical decisions")],
+      productUx: [ph("Product and UX contribution")],
+      challenges: [ph("Challenges")],
+      outcome: [ph("Outcome")],
+      reflection: [ph("Reflection")],
+    },
+  },
+  {
     slug: "arterious",
     title: "Arterious",
     category: "Apple Developer Academy",
@@ -232,4 +305,4 @@ export const featuredProjects = publishedProjects.filter((p) => p.featured);
 
 export const getProject = (slug: string) => publishedProjects.find((p) => p.slug === slug);
 
-export const projectCategories = ["Production", "Independent", "Apple Developer Academy"] as const;
+export const projectCategories = ["Production", "Independent", "International Freelance", "Apple Developer Academy"] as const;

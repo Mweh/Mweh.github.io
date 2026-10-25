@@ -1,4 +1,6 @@
 # Portfolio improvements
+- [x] Add Revigurize and Love in the Sky with official App Store descriptions, covers and freelance links
+- [x] Add supplied Qita, MyTelkomsel, KoalaFit and MindMories contributions with regression checks
 - [x] Add Marble UI-only cover and separate screens; use supplied description without members or emoji
 - [x] Add the four official App Store links and screenshots, replace BRImo with Qita by BRI, and remove One More Inch
 - [x] Photo placement and shorter opening
@@ -7,4 +9,4 @@
 - [x] Centralized positioning copy and KISS cleanup
 - [x] Not-found metadata and deployment test gate
 - [x] Documentation and preview verification (five tests, navigation, metadata, key contrast, reduced motion)
-- [ ] Owner-supplied project responsibilities, dates and location (awaiting owner)
+- [ ] Remaining project responsibilities (Marble and freelance apps), dates and location (awaiting owner)

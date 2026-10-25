@@ -3,8 +3,9 @@ import type { FreelanceEntry } from "@/types/experience";
 
 const entry = (id: string, country: string): FreelanceEntry => ({
   id,
+  projectSlug: id === "netherlands" ? "revigurize" : "love-in-the-sky",
   country,
-  client: ph(`${country} Client / Project`),
+  client: id === "netherlands" ? "Revigurize" : "Love In The Sky",
   industry: ph("Client industry"),
   role: ph("My role"),
   problem: ph("Problem the client had"),

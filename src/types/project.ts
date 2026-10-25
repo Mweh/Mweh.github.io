@@ -3,6 +3,7 @@ import type { Text } from "@/lib/placeholder";
 export type ProjectCategory =
   | "Production"
   | "Independent"
+  | "International Freelance"
   | "Apple Developer Academy";
 
 export interface ProjectImage {
@@ -47,6 +48,8 @@ export interface Project {
   description: string;
   /** Recruiter-readable intro at the top of the case study. */
   summary: string;
+  /** Verbatim product description, kept separate from personal contribution. */
+  appStoreDescription?: string[];
   /** Only technologies actually used. */
   technologies: string[];
   heroImage?: ProjectImage | undefined;
