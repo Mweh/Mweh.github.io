@@ -49,7 +49,7 @@ export interface Project {
   summary: string;
   /** Only technologies actually used. */
   technologies: string[];
-  heroImage?: ProjectImage;
+  heroImage?: ProjectImage | undefined;
   gallery: ProjectImage[];
   links: ProjectLink[];
   caseStudy: CaseStudy;

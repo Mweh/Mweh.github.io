@@ -1,5 +1,6 @@
 import { ph } from "@/lib/placeholder";
 import type { Project } from "@/types/project";
+import { projectMedia } from "./projectMedia";
 
 /**
  * All projects. Add a project by appending one object — the card, case-study page,
@@ -8,10 +9,10 @@ import type { Project } from "@/types/project";
  */
 const projects: Project[] = [
   {
-    slug: "brimo",
+    slug: "qita-by-bri",
     type: "Professional / Production",
     evidence: "Production app — source not public",
-    title: "BRImo",
+    title: "Qita by BRI",
     category: "Production",
     featured: true,
     order: 1,
@@ -20,14 +21,15 @@ const projects: Project[] = [
     role: "iOS Developer",
     description: "Native iOS development on a production-scale financial application.",
     summary:
-      "Professional iOS development on BRImo, a production financial application, as part of BRI-related iOS development.",
+      "Professional iOS development on Qita by BRI, a production financial application.",
     technologies: ["Swift", "iOS"],
-    gallery: [],
-    links: [{ label: "App Store", href: ph("BRImo App Store URL") }],
+    heroImage: projectMedia["qita-by-bri"]?.heroImage,
+    gallery: projectMedia["qita-by-bri"]?.gallery ?? [],
+    links: [{ label: "App Store", href: "https://apps.apple.com/id/app/qita-by-bri/id6747552980" }],
     caseStudy: {
-      context: ["BRImo is a production financial application on iOS."],
+      context: ["Qita by BRI is a production financial application on iOS."],
       problem: [ph("Problem or goal of the work you contributed to")],
-      role: [ph("Responsibilities on the BRImo iOS team")],
+      role: [ph("Responsibilities on the Qita by BRI iOS team")],
       approach: [ph("How you approached the work")],
       engineering: [ph("Architecture, frameworks and technical decisions you can share")],
       productUx: [ph("Product and UX decisions you were involved in")],
@@ -50,8 +52,9 @@ const projects: Project[] = [
     description: "Native iOS development on a production telecommunications application.",
     summary: "Professional native iOS development on the MyTelkomsel production application.",
     technologies: ["Swift", "iOS"],
-    gallery: [],
-    links: [{ label: "App Store", href: ph("MyTelkomsel App Store URL") }],
+    heroImage: projectMedia["mytelkomsel"]?.heroImage,
+    gallery: projectMedia["mytelkomsel"]?.gallery ?? [],
+    links: [{ label: "App Store", href: "https://apps.apple.com/id/app/mytelkomsel/id651412430" }],
     caseStudy: {
       context: ["MyTelkomsel is a production application on iOS."],
       problem: [ph("Problem or goal of the work you contributed to")],
@@ -78,9 +81,10 @@ const projects: Project[] = [
     summary:
       "KoalaFit is a shipped App Store project built with SwiftUI and MVVM, integrating HealthKit, Apple Watch, AI-powered onboarding with Gemini, and food scanning.",
     technologies: ["SwiftUI", "MVVM", "HealthKit", "Apple Watch", "Gemini", "Food scanning"],
-    gallery: [],
+    heroImage: projectMedia["koalafit"]?.heroImage,
+    gallery: projectMedia["koalafit"]?.gallery ?? [],
     links: [
-      { label: "App Store", href: ph("KoalaFit App Store URL") },
+      { label: "App Store", href: "https://apps.apple.com/us/app/koalafit/id6774622691" },
       { label: "GitHub", href: ph("Repository URL, if public") },
     ],
     caseStudy: {
@@ -118,9 +122,10 @@ const projects: Project[] = [
     summary:
       "MindMories is an independent iOS project in SwiftUI and MVVM, integrating native Apple frameworks: PhotoKit, Vision, CoreLocation and UserNotifications.",
     technologies: ["SwiftUI", "MVVM", "PhotoKit", "Vision", "CoreLocation", "UserNotifications"],
-    gallery: [],
+    heroImage: projectMedia["mindmories"]?.heroImage,
+    gallery: projectMedia["mindmories"]?.gallery ?? [],
     links: [
-      { label: "App Store", href: ph("App Store URL, if available") },
+      { label: "App Store", href: "https://apps.apple.com/id/app/mindmories/id6786116342" },
       { label: "GitHub", href: ph("Repository URL, if public") },
     ],
     caseStudy: {
@@ -177,38 +182,6 @@ const projects: Project[] = [
       ],
       productUx: [ph("How friction was designed within Apple's ecosystem")],
       challenges: [ph("Technical limitations and the product decisions they forced")],
-      outcome: [ph("Outcome")],
-      reflection: [ph("What you would improve")],
-    },
-  },
-  {
-    slug: "one-more-inch",
-    type: "Apple Developer Academy",
-    weight: "compact",
-    title: "One More Inch",
-    category: "Apple Developer Academy",
-    featured: true,
-    order: 6,
-    published: true,
-    year: ph("Year"),
-    role: ph("Role"),
-    description: "A native iOS game built with SpriteKit, Swift and SwiftUI.",
-    summary:
-      "One More Inch is a native iOS game experiment exploring gameplay mechanics and interaction design with SpriteKit.",
-    technologies: ["SpriteKit", "Swift", "SwiftUI"],
-    gallery: [],
-    links: [{ label: "Link", href: ph("App Store / GitHub / demo URL") }],
-    caseStudy: {
-      context: ["One More Inch is a native iOS game built entirely with Apple's frameworks."],
-      problem: [ph("The design goal of the game")],
-      role: [ph("Your contribution")],
-      approach: [ph("How you approached the gameplay")],
-      engineering: [
-        "Built with SpriteKit, Swift and SwiftUI.",
-        ph("Game-related frameworks and engineering decisions"),
-      ],
-      productUx: [ph("Gameplay mechanics and interaction design")],
-      challenges: [ph("What was difficult")],
       outcome: [ph("Outcome")],
       reflection: [ph("What you would improve")],
     },

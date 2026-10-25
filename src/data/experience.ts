@@ -9,7 +9,7 @@ export const experience: ExperienceEntry[] = [
     organization: ph("Employer name (BRI-related iOS development)"),
     period: ph("Employment dates"),
     summary: "Professional iOS development on production applications.",
-    projectSlugs: ["brimo", "mytelkomsel"],
+    projectSlugs: ["qita-by-bri", "mytelkomsel"],
   },
   {
     id: "freelance",
@@ -26,6 +26,6 @@ export const experience: ExperienceEntry[] = [
     period: "2026",
     summary:
       "Expanding product thinking, Apple ecosystem expertise, and prototyping through Apple Developer Academy.",
-    projectSlugs: ["marble", "one-more-inch"],
+    projectSlugs: ["marble"],
   },
 ];

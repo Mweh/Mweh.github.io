@@ -11,7 +11,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 // /work/koalafit resolve to work/koalafit/index.html — never a 404.
 // NOTE: keep these slugs in sync with published projects in src/data/projects.ts
 // (the "@/..." import alias is not available inside vite.config.ts).
-const projectSlugs = ["brimo", "mytelkomsel", "koalafit", "mindmories", "marble", "one-more-inch"];
+const projectSlugs = ["qita-by-bri", "mytelkomsel", "koalafit", "mindmories", "marble"];
 const pages = [
   { path: "/" },
   { path: "/work" },

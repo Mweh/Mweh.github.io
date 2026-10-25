@@ -21,7 +21,28 @@ describe("projects", () => {
   });
 
   test("placeholder links are detectable so they are never rendered", () => {
-    const brimo = getProject("brimo");
-    expect(brimo?.links.every((l) => isPlaceholder(l.href))).toBe(true);
+    const marble = getProject("marble");
+    expect(marble?.links.every((l) => isPlaceholder(l.href))).toBe(true);
+  });
+
+  for (const [slug, href] of [
+    ["koalafit", "https://apps.apple.com/us/app/koalafit/id6774622691"],
+    ["mindmories", "https://apps.apple.com/id/app/mindmories/id6786116342"],
+    ["qita-by-bri", "https://apps.apple.com/id/app/qita-by-bri/id6747552980"],
+    ["mytelkomsel", "https://apps.apple.com/id/app/mytelkomsel/id651412430"],
+  ]) {
+    test(`${slug} uses the owner's official App Store link`, () => {
+      expect(getProject(slug ?? "")?.links.find((l) => l.label === "App Store")?.href).toBe(href);
+    });
+  }
+
+  test("Qita by BRI replaces BRImo", () => {
+    expect(getProject("qita-by-bri")?.title).toBe("Qita by BRI");
+    expect(getProject("brimo")).toBeUndefined();
+  });
+
+  test("One More Inch is removed from the portfolio", () => {
+    expect(getProject("one-more-inch")).toBeUndefined();
+    expect(publishedProjects.some((p) => p.title === "One More Inch")).toBe(false);
   });
 });
