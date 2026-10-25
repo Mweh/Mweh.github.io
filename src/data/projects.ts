@@ -1,5 +1,6 @@
 import { ph } from "@/lib/placeholder";
 import type { Project } from "@/types/project";
+import { projectMedia } from "./projectMedia";
 
 /**
  * All projects. Add a project by appending one object — the card, case-study page,
@@ -22,7 +23,8 @@ const projects: Project[] = [
     summary:
       "Professional iOS development on Qita by BRI, a production financial application.",
     technologies: ["Swift", "iOS"],
-    gallery: [],
+    heroImage: projectMedia["qita-by-bri"]?.heroImage,
+    gallery: projectMedia["qita-by-bri"]?.gallery ?? [],
     links: [{ label: "App Store", href: "https://apps.apple.com/id/app/qita-by-bri/id6747552980" }],
     caseStudy: {
       context: ["Qita by BRI is a production financial application on iOS."],
@@ -50,7 +52,8 @@ const projects: Project[] = [
     description: "Native iOS development on a production telecommunications application.",
     summary: "Professional native iOS development on the MyTelkomsel production application.",
     technologies: ["Swift", "iOS"],
-    gallery: [],
+    heroImage: projectMedia["mytelkomsel"]?.heroImage,
+    gallery: projectMedia["mytelkomsel"]?.gallery ?? [],
     links: [{ label: "App Store", href: "https://apps.apple.com/id/app/mytelkomsel/id651412430" }],
     caseStudy: {
       context: ["MyTelkomsel is a production application on iOS."],
@@ -78,7 +81,8 @@ const projects: Project[] = [
     summary:
       "KoalaFit is a shipped App Store project built with SwiftUI and MVVM, integrating HealthKit, Apple Watch, AI-powered onboarding with Gemini, and food scanning.",
     technologies: ["SwiftUI", "MVVM", "HealthKit", "Apple Watch", "Gemini", "Food scanning"],
-    gallery: [],
+    heroImage: projectMedia["koalafit"]?.heroImage,
+    gallery: projectMedia["koalafit"]?.gallery ?? [],
     links: [
       { label: "App Store", href: "https://apps.apple.com/us/app/koalafit/id6774622691" },
       { label: "GitHub", href: ph("Repository URL, if public") },
@@ -118,7 +122,8 @@ const projects: Project[] = [
     summary:
       "MindMories is an independent iOS project in SwiftUI and MVVM, integrating native Apple frameworks: PhotoKit, Vision, CoreLocation and UserNotifications.",
     technologies: ["SwiftUI", "MVVM", "PhotoKit", "Vision", "CoreLocation", "UserNotifications"],
-    gallery: [],
+    heroImage: projectMedia["mindmories"]?.heroImage,
+    gallery: projectMedia["mindmories"]?.gallery ?? [],
     links: [
       { label: "App Store", href: "https://apps.apple.com/id/app/mindmories/id6786116342" },
       { label: "GitHub", href: ph("Repository URL, if public") },

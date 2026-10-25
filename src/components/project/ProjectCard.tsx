@@ -19,8 +19,8 @@ export function ProjectCard({
   const realLinks = project.links.filter((l) => !isPlaceholder(l.href));
   return (
     <article className="group relative flex flex-col">
-      {!compact && <MediaFrame image={project.heroImage} label={project.title} caption={project.technologies.slice(0, 3).join(" · ")} />}
-      <div className={cn("flex items-start justify-between gap-4", !compact && "mt-5")}>
+      {(!compact || project.heroImage) && <MediaFrame image={project.heroImage} label={project.title} caption={project.technologies.slice(0, 3).join(" · ")} />}
+      <div className={cn("flex items-start justify-between gap-4", (!compact || project.heroImage) && "mt-5")}>
         <div className="min-w-0">
           <p className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
             {project.type ?? project.category}

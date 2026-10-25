@@ -111,6 +111,16 @@ export function CaseStudy({ project }: { project: Project }) {
           className="mt-12 aspect-[16/9]"
         />}
 
+        {project.gallery.length > 0 && (
+          <div className="mt-8 grid grid-cols-1 items-start gap-5 sm:grid-cols-3">
+            {project.gallery.map((image) => (
+              <a key={image.src} href={image.src} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-lg border bg-surface focus-visible:outline-2 focus-visible:outline-ring">
+                <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" className="h-auto w-full" />
+              </a>
+            ))}
+          </div>
+        )}
+
         <div className="mt-16">
           {visible.map((s, i) => (
             <CaseSection

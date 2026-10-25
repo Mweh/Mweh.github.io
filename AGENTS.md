@@ -21,6 +21,7 @@ Read `README.md`, `docs/ARCHITECTURE.md`, and the PRDs in `docs/prd/` first.
 - Keep only consumed UI primitives and dependencies; unused TypeScript checks and project-data tests gate maintenance and deployment.
 - Route files in `src/routes/` stay thin: `head()` + a page component from `src/components/pages/`. No `src/pages/` folder — the router only reads `src/routes/`.
 - All case studies render through one route (`work.$slug.tsx`) and one component (`components/project/CaseStudy.tsx`) — never duplicate case-study markup per project.
+- Official project media is typed in `src/data/projectMedia.ts`; managed asset pointers serve development and identical optimized public files serve static production, so GitHub Pages never requires Lovable asset hosting.
 - Missing content uses `ph()` from `src/lib/placeholder.ts` and renders via `TextValue` — keeps gaps visible and searchable.
 - SEO tags come from `buildHead()` in `src/lib/seo.ts`; og:image only on leaf routes with a real absolute image.
 - Motion is CSS plus `hooks/use-reveal.ts`; always respect `prefers-reduced-motion` — no animation libraries.

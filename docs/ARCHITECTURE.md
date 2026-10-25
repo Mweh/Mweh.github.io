@@ -50,3 +50,4 @@ Tailwind v4, configured in `src/styles.css`. Semantic tokens (`background`, `for
 - Portrait: `public/images/profile/`, set `profile.portrait`; `profile.avatar` supplies a face-focused crop for the opening and résumé. The banner remains a sharing asset, not an About image.
 - CV: `public/cv/muhammad-fahmi-cv.pdf`, set `profile.cvUrl` to `/cv/muhammad-fahmi-cv.pdf`.
 - Without an image, project cards show a compact title tile; case studies omit the media frame. Never generate fake screenshots.
+- Official App Store images are mapped in `src/data/projectMedia.ts`: managed pointers for development, optimized local files for independently hosted production. Covers combine three unaltered screenshots; case studies also show each full screenshot with links to its full-sized image.
