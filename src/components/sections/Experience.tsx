@@ -14,7 +14,7 @@ function Timeline({ entries }: { entries: ExperienceEntry[] }) {
             <p className="font-mono text-sm leading-relaxed text-muted-foreground"><TextValue value={e.period} /></p>
             <div className="min-w-0">
               <div className="grid grid-cols-[auto_minmax(0,1fr)] items-start gap-4">
-                {e.image ? <img src={e.image.src} alt={e.image.alt} width={48} height={48} loading="lazy" decoding="async" className="size-12 shrink-0 rounded-lg border bg-surface object-contain p-1.5" /> : <span aria-hidden className="grid size-12 shrink-0 place-items-center rounded-lg border bg-surface font-mono text-sm text-muted-foreground">{typeof e.organization === "string" ? e.organization.slice(0, 2).toUpperCase() : ""}</span>}
+                {e.image ? <img src={e.image.src} alt={e.image.alt} width={48} height={48} loading="lazy" decoding="async" className="size-12 shrink-0 rounded-[22.5%] border bg-surface object-cover" /> : <span aria-hidden className="grid size-12 shrink-0 place-items-center rounded-[22.5%] border bg-surface font-mono text-sm text-muted-foreground">{typeof e.organization === "string" ? e.organization.slice(0, 2).toUpperCase() : ""}</span>}
                 <div className="min-w-0">
                   <h3 className="text-lg font-semibold">{e.role}</h3>
                   <p className="mt-0.5 text-muted-foreground"><TextValue value={e.organization} /></p>
