@@ -19,11 +19,27 @@ import mindmories0 from "@/assets/project-media/mindmories/cover.webp.asset.json
 import mindmories1 from "@/assets/project-media/mindmories/screenshot-1.webp.asset.json";
 import mindmories2 from "@/assets/project-media/mindmories/screenshot-2.webp.asset.json";
 import mindmories3 from "@/assets/project-media/mindmories/screenshot-3.webp.asset.json";
+import revigurize0 from "@/assets/project-media/revigurize/cover.webp.asset.json";
+import revigurize1 from "@/assets/project-media/revigurize/screenshot-1.webp.asset.json";
+import revigurize2 from "@/assets/project-media/revigurize/screenshot-2.webp.asset.json";
+import revigurize3 from "@/assets/project-media/revigurize/screenshot-3.webp.asset.json";
+import love0 from "@/assets/project-media/love-in-the-sky/cover.webp.asset.json";
+import love1 from "@/assets/project-media/love-in-the-sky/screenshot-1.webp.asset.json";
+import love2 from "@/assets/project-media/love-in-the-sky/screenshot-2.webp.asset.json";
+import love3 from "@/assets/project-media/love-in-the-sky/screenshot-3.webp.asset.json";
 
 // Preview uses managed assets; static production uses the same optimized local files.
 const source = (asset: { url: string }, path: string) => import.meta.env.DEV ? asset.url : path;
 
 export const projectMedia: Record<string, { heroImage: ProjectImage; gallery: ProjectImage[] }> = {
+  revigurize: {
+    heroImage: { src: source(revigurize0, "/images/projects/revigurize/cover.webp"), alt: "Revigurize — official App Store screenshots", width: 1600, height: 1155 },
+    gallery: [revigurize1, revigurize2, revigurize3].map((asset, i) => ({ src: source(asset, `/images/projects/revigurize/screenshot-${i + 1}.webp`), alt: `Revigurize — App Store screenshot ${i + 1}`, width: 600, height: 1299 })),
+  },
+  "love-in-the-sky": {
+    heroImage: { src: source(love0, "/images/projects/love-in-the-sky/cover.webp"), alt: "Love In The Sky — official App Store screenshots", width: 1600, height: 1155 },
+    gallery: [love1, love2, love3].map((asset, i) => ({ src: source(asset, `/images/projects/love-in-the-sky/screenshot-${i + 1}.webp`), alt: `Love In The Sky — App Store screenshot ${i + 1}`, width: 600, height: 1299 })),
+  },
   marble: {
     heroImage: { src: source(marbleCover, "/images/projects/marble/cover.webp"), alt: "Marble app — home, screen-time impact, and report screens", width: 1026, height: 696 },
     gallery: [

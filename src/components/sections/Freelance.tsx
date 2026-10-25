@@ -5,6 +5,9 @@ import { Chip } from "@/components/common/Primitives";
 import { TextValue } from "@/components/common/TextValue";
 import { isPlaceholder } from "@/lib/placeholder";
 import type { FreelanceEntry } from "@/types/experience";
+import { Link } from "@tanstack/react-router";
+import { getProject } from "@/data/projects";
+import { MediaFrame } from "@/components/project/MediaFrame";
 
 const fields: Array<[keyof FreelanceEntry, string]> = [
   ["industry", "Client / Industry"],
@@ -30,7 +33,9 @@ export function FreelanceBlock() {
         ))}
       </ul>
       <div className="grid gap-6 md:grid-cols-2">
-        {freelance.map((f) => (
+        {freelance.map((f) => {
+          const project = f.projectSlug ? getProject(f.projectSlug) : undefined;
+          return (
           <article key={f.id} className="rounded-lg border bg-surface p-6 sm:p-8">
             <p className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
               {f.country}
@@ -38,6 +43,13 @@ export function FreelanceBlock() {
             <h4 className="mt-2 text-xl font-semibold tracking-tight">
               <TextValue value={f.client} />
             </h4>
+            {project && <>
+              <Link to="/work/$slug" params={{ slug: project.slug }} aria-label={`${project.title} case study`} className="mt-5 block focus-visible:outline-2 focus-visible:outline-ring">
+                <MediaFrame image={project.heroImage} label={project.title} />
+              </Link>
+              <p className="mt-5 text-sm text-pretty text-muted-foreground">{project.description}</p>
+              <Link to="/work/$slug" params={{ slug: project.slug }} className="mt-4 inline-flex text-sm font-medium text-accent hover:underline">View project →</Link>
+            </>}
             <dl className="mt-6 space-y-3 text-sm">
               {fields.filter(([key]) => !isPlaceholder(f[key])).map(([key, label]) => (
                 <div key={key} className="grid gap-1 sm:grid-cols-[9rem_1fr]">
@@ -49,7 +61,8 @@ export function FreelanceBlock() {
               ))}
             </dl>
           </article>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

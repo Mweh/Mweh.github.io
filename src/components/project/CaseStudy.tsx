@@ -122,6 +122,14 @@ export function CaseStudy({ project }: { project: Project }) {
         )}
 
         <div className="mt-16">
+          {project.appStoreDescription && <section aria-labelledby="app-store-description" className="border-t py-12">
+            <div className="grid gap-4 md:grid-cols-[14rem_1fr] md:gap-10">
+              <h2 id="app-store-description" className="text-xl font-semibold">App Store description</h2>
+              <div className="max-w-2xl space-y-4 text-lg text-pretty text-foreground/85">
+                {project.appStoreDescription.map((paragraph, i) => <p key={i} className="whitespace-pre-line">{paragraph}</p>)}
+              </div>
+            </div>
+          </section>}
           {visible.map((s, i) => (
             <CaseSection
               key={s.key}
