@@ -7,23 +7,24 @@ import { socialLinks } from "@/data/socialLinks";
 import { Container, Eyebrow } from "@/components/common/Primitives";
 import { TextValue } from "@/components/common/TextValue";
 import { Button } from "@/components/ui/button";
+import { isPlaceholder } from "@/lib/placeholder";
 
 export function ResumePage() {
   return (
     <Container className="max-w-3xl py-16 sm:py-24">
       <header>
         <Eyebrow>Resume</Eyebrow>
-        <div className="mt-3 flex items-center gap-5">
-          {profile.portrait && (
+        <div className="mt-3 flex min-w-0 items-center gap-4">
+          {profile.avatar && (
             <img
-              src={profile.portrait.src}
-              alt={profile.portrait.alt}
+              src={profile.avatar.src}
+              alt={profile.avatar.alt}
               width={80}
               height={80}
-              className="size-16 shrink-0 rounded-full border object-cover object-top sm:size-20"
+              className="size-16 shrink-0 rounded-lg border object-cover sm:size-20"
             />
           )}
-          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">{profile.name}</h1>
+          <h1 className="min-w-0 text-3xl font-semibold sm:text-5xl">{profile.name}</h1>
         </div>
         <p className="mt-2 text-lg text-muted-foreground">
           {profile.title} · {profile.experienceYears} years · <TextValue value={profile.location} />
@@ -33,7 +34,11 @@ export function ResumePage() {
           {socialLinks.map((l) => (
             <li key={l.id}>
               <span className="text-muted-foreground">{l.label}: </span>
-              <TextValue value={l.handle} />
+              {isPlaceholder(l.href) ? <TextValue value={l.handle} /> : (
+                <a href={l.href} className="underline underline-offset-4" {...(l.href.startsWith("https:") ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
+                  <TextValue value={l.handle} />
+                </a>
+              )}
             </li>
           ))}
         </ul>

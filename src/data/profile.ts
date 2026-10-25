@@ -22,7 +22,8 @@ export const profile: Profile = {
     "Alongside that, I work independently with international clients from the Netherlands and the United States, remotely and across time zones.",
     "I'm currently part of Apple Developer Academy 2026 @ ILB, expanding product thinking, Apple ecosystem expertise, and prototyping.",
   ],
-  portrait: { src: "/images/profile/portrait.webp", alt: "Muhammad Fahmi sitting at a desk next to a screen showing the Marble app" },
+  portrait: { src: "/images/profile/portrait.webp", alt: "Muhammad Fahmi sitting at a desk next to a screen showing the Marble app", width: 640, height: 800 },
+  avatar: { src: "/images/profile/avatar.webp", alt: "Muhammad Fahmi", width: 250, height: 250 },
   banner: {
     src: "/images/profile/header.webp",
     alt: "iOS Engineer — Modular, reusable, testable, performant. From Cold Start to Smooth Finish.",

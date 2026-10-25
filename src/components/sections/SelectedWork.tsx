@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { featuredProjects } from "@/data/projects";
+import { siteContent } from "@/data/site";
 import { Section, SectionHeading } from "@/components/common/Primitives";
 import { ProjectCard } from "@/components/project/ProjectCard";
 
@@ -11,7 +12,7 @@ export function SelectedWork() {
       <SectionHeading
         id="work-title"
         eyebrow="Selected Work"
-        title="Production apps, shipped products, and Apple platform experiments."
+        title={siteContent.selectedWorkTitle}
       />
       <div className="grid gap-x-10 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
         {large.map((p) => (

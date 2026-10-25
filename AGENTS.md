@@ -16,6 +16,9 @@ Read `README.md`, `docs/ARCHITECTURE.md`, and the PRDs in `docs/prd/` first.
 ## Architecture rules
 
 - All content lives in `src/data/*.ts`, typed by `src/types/*`. Components render data; never hardcode personal or project copy in components — keeps edits to one place.
+- Shared positioning copy lives in typed `src/data/site.ts`; personal facts stay in profile data so wording has one edit point.
+- Static content uses the router without React Query; add fetching infrastructure only when a real consumer needs it.
+- Keep only consumed UI primitives and dependencies; unused TypeScript checks and project-data tests gate maintenance and deployment.
 - Route files in `src/routes/` stay thin: `head()` + a page component from `src/components/pages/`. No `src/pages/` folder — the router only reads `src/routes/`.
 - All case studies render through one route (`work.$slug.tsx`) and one component (`components/project/CaseStudy.tsx`) — never duplicate case-study markup per project.
 - Missing content uses `ph()` from `src/lib/placeholder.ts` and renders via `TextValue` — keeps gaps visible and searchable.

@@ -44,7 +44,7 @@
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.5rem;
   --background: oklch(0.985 0.004 85);
   --foreground: oklch(0.2 0.01 260);
   --surface: oklch(0.965 0.006 85);
@@ -84,7 +84,9 @@
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    letter-spacing: 0;
   }
+  [class*="tracking-"] { letter-spacing: 0; }
   :focus-visible {
     outline: 2px solid var(--color-ring);
     outline-offset: 3px;
