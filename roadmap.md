@@ -1,5 +1,5 @@
 # Portfolio improvements
-- [ ] Remove merged covers from every detail gallery; preserve preview covers and verify all project pages
+- [x] Remove merged covers from every detail gallery; preserve preview covers and verify all seven project pages
 - [x] Replace experience placeholders with CV experience and education, add verified organization images with initials fallback, and verify layouts
 - [x] Align Qita, MyTelkomsel, KoalaFit and MindMories product descriptions with official App Store listings; preserve personal contributions
 - [x] Revert inset screenshot previews to full-bleed rounded covers and verify navigation and layout
