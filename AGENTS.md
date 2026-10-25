@@ -22,7 +22,7 @@ Read `README.md`, `docs/ARCHITECTURE.md`, and the PRDs in `docs/prd/` first.
 - Route files in `src/routes/` stay thin: `head()` + a page component from `src/components/pages/`. No `src/pages/` folder — the router only reads `src/routes/`.
 - All case studies render through one route (`work.$slug.tsx`) and one component (`components/project/CaseStudy.tsx`) — never duplicate case-study markup per project.
 - Official project media is typed in `src/data/projectMedia.ts`; managed asset pointers serve development and identical optimized public files serve static production, so GitHub Pages never requires Lovable asset hosting.
-- Project previews use MediaFrame's shared three-screen layout when gallery media exists; equal slots and contain sizing preserve full UI proportions across cards and case studies without per-project framing overrides.
+- Project previews use MediaFrame's shared edge-to-edge cover layout; consistent frames avoid per-project overrides, while detail galleries retain uncropped screenshots for inspection.
 - Freelance entries reference shared project slugs; verbatim App Store descriptions stay in typed data and render separately from personal contributions to avoid attributing product features to the owner.
 - Missing content uses `ph()` from `src/lib/placeholder.ts` and renders via `TextValue` — keeps gaps visible and searchable.
 - SEO tags come from `buildHead()` in `src/lib/seo.ts`; og:image only on leaf routes with a real absolute image.
