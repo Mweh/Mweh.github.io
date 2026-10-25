@@ -23,5 +23,5 @@ const icons: Record<string, ComponentType<{ className?: string }>> = {
 /** Icon for a social link id; renders nothing when the id has no mark. */
 export function SocialIcon({ id, className }: { id: string; className?: string }) {
   const Icon = icons[id];
-  return Icon ? <Icon className={className} /> : null;
+  return Icon ? <Icon className={className ?? ""} /> : null;
 }
