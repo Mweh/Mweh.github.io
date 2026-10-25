@@ -99,7 +99,7 @@ const projects: Project[] = [
     gallery: projectMedia["koalafit"]?.gallery ?? [],
     links: [
       { label: "App Store", href: "https://apps.apple.com/us/app/koalafit/id6774622691" },
-      { label: "GitHub", href: ph("Repository URL, if public") },
+      { label: "GitHub", href: "https://github.com/Mweh/BodyCraft" },
     ],
     caseStudy: {
       context: [
@@ -140,7 +140,7 @@ const projects: Project[] = [
     links: [
       { label: "App Store", href: "https://apps.apple.com/id/app/mindmories/id6786116342" },
       { label: "TestFlight automation article", href: "https://medium.com/@fahmianton/i-thought-setting-up-testflight-automation-would-take-30-minutes-40c3cca04fd5" },
-      { label: "GitHub", href: ph("Repository URL, if public") },
+      { label: "GitHub", href: "https://github.com/Mweh/MindMory" },
     ],
     caseStudy: {
       context: ["MindMories is a context-aware reminder app for capturing meaningful moments during travel, birthdays, special events and everyday life. Its App Store description calls the product MindMory and highlights saved-location reminders, calendar integration, context-aware notifications and Memory Relive."],
@@ -184,7 +184,7 @@ const projects: Project[] = [
     ],
     heroImage: projectMedia["marble"]?.heroImage,
     gallery: projectMedia["marble"]?.gallery ?? [],
-    links: [{ label: "Link", href: ph("App Store / GitHub / demo URL") }],
+    links: [{ label: "GitHub", href: "https://github.com/lasvegas-labs/Marble" }],
     caseStudy: {
       context: [
         "Marble helps people build awareness of their screen time and develop healthier habits around distracting apps.",
@@ -217,7 +217,7 @@ const projects: Project[] = [
     featured: false,
     order: 6,
     published: true,
-    year: ph("Freelance period"),
+    year: "Dec 2025 – Present",
     role: "Freelance iOS Developer",
     description: "A seven-month hair-growth companion with guided monthly photos, progress comparisons, reminders, and English and Dutch support.",
     summary: "Revigurize is a hair-growth tracking companion. International freelance iOS work for a client in the Netherlands.",
@@ -246,7 +246,7 @@ const projects: Project[] = [
     featured: false,
     order: 7,
     published: true,
-    year: ph("Freelance period"),
+    year: "Jul 2026 – Present",
     role: "Freelance iOS Developer",
     description: "A dating and social-connection app for aviation professionals, with aviation-focused profiles, crew matching, and layover connections.",
     summary: "Love In The Sky connects aviation professionals for dating and social connections. International freelance iOS work for a client in the United States.",

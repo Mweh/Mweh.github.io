@@ -1,4 +1,3 @@
-import { ph } from "@/lib/placeholder";
 import type { Profile } from "@/types/profile";
 
 /** Single source of truth for personal information. */
@@ -11,7 +10,7 @@ export const profile: Profile = {
     "3+ years building and shipping native iOS applications with Swift, SwiftUI, UIKit, and the Apple ecosystem.",
   heroStatement: "3+ years building and shipping native iOS applications.",
   technologyLine: ["Swift", "SwiftUI", "UIKit", "Apple Platforms"],
-  location: ph("Location, e.g. city, Indonesia"),
+  location: "Jakarta, Indonesia",
   academyLine:
     "Expanding product thinking, Apple ecosystem expertise, and prototyping through Apple Developer Academy.",
   freelanceStatement:

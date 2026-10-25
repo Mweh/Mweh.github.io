@@ -21,9 +21,20 @@ describe("projects", () => {
     expect(slugs.sort()).toEqual(publishedProjects.map((p) => p.slug).sort());
   });
 
-  test("placeholder links are detectable so they are never rendered", () => {
-    const marble = getProject("marble");
-    expect(marble?.links.every((l) => isPlaceholder(l.href))).toBe(true);
+  for (const [slug, href] of [
+    ["koalafit", "https://github.com/Mweh/BodyCraft"],
+    ["mindmories", "https://github.com/Mweh/MindMory"],
+    ["marble", "https://github.com/lasvegas-labs/Marble"],
+  ] as const) {
+    test(`${slug} links its GitHub repo`, () => {
+      const links = getProject(slug)?.links ?? [];
+      expect(links.some((l) => !isPlaceholder(l.href) && l.href === href)).toBe(true);
+    });
+  }
+
+  test("freelance periods match the owner's dates", () => {
+    expect(getProject("revigurize")?.year).toBe("Dec 2025 – Present");
+    expect(getProject("love-in-the-sky")?.year).toBe("Jul 2026 – Present");
   });
 
   for (const [slug, href] of [
