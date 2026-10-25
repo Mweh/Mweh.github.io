@@ -64,7 +64,7 @@ function CaseSection({ index, title, question, paragraphs }: {
           <p className="mt-1 text-sm text-muted-foreground">{question}</p>
         </div>
         <div className="max-w-2xl space-y-4 text-lg text-pretty text-foreground/85">
-          {paragraphs.map((p, i) => (
+          {paragraphs.filter((p) => !isPlaceholder(p)).map((p, i) => (
             <p key={i}>
               <TextValue value={p} />
             </p>
@@ -78,10 +78,8 @@ function CaseSection({ index, title, question, paragraphs }: {
 export function CaseStudy({ project }: { project: Project }) {
   const idx = publishedProjects.findIndex((p) => p.slug === project.slug);
   const next = publishedProjects[(idx + 1) % publishedProjects.length];
-  // Show a section only when it has real content; "My Role" always shows so a gap stays visible.
-  const visible = sections.filter(
-    (s) => s.key === "role" || project.caseStudy[s.key].some((p) => !isPlaceholder(p)),
-  );
+  // Show a section only when it has real content; missing details stay hidden.
+  const visible = sections.filter((s) => project.caseStudy[s.key].some((p) => !isPlaceholder(p)));
   const realLinks = project.links.filter((l) => !isPlaceholder(l.href));
 
   return (
@@ -99,10 +97,10 @@ export function CaseStudy({ project }: { project: Project }) {
         </header>
 
         <dl className="mt-12 grid gap-6 border-y py-8 text-sm sm:grid-cols-2 lg:grid-cols-4">
-          <div>
+          {!isPlaceholder(project.role) && <div>
             <dt className="text-muted-foreground">Role</dt>
             <dd className="mt-1 font-medium"><TextValue value={project.role} /></dd>
-          </div>
+          </div>}
           {!isPlaceholder(project.year) && <div>
             <dt className="text-muted-foreground">Year</dt>
             <dd className="mt-1 font-medium"><TextValue value={project.year} /></dd>
