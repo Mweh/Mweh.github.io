@@ -8,5 +8,6 @@
 - [x] Actionable résumé links and portrait crop
 - [x] Centralized positioning copy and KISS cleanup
 - [x] Not-found metadata and deployment test gate
+- [x] Swift logo browser tab icon replacing the default one
 - [x] Documentation and preview verification (five tests, navigation, metadata, key contrast, reduced motion)
 - [ ] Remaining project responsibilities (Marble and freelance apps), dates and location (awaiting owner)
