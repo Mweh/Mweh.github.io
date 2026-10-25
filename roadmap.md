@@ -1,5 +1,5 @@
 # Portfolio improvements
-- [ ] Replace experience placeholders with CV experience and education, add official organization images, and verify layouts
+- [x] Replace experience placeholders with CV experience and education, add verified organization images with initials fallback, and verify layouts
 - [x] Align Qita, MyTelkomsel, KoalaFit and MindMories product descriptions with official App Store listings; preserve personal contributions
 - [x] Revert inset screenshot previews to full-bleed rounded covers and verify navigation and layout
 - [x] Audit and unify project-image proportions, spacing and alignment across all pages (320–1280px verified)
@@ -14,4 +14,4 @@
 - [x] Not-found metadata and deployment test gate
 - [x] Swift logo browser tab icon replacing the default one
 - [x] Documentation and preview verification (five tests, navigation, metadata, key contrast, reduced motion)
-- [ ] Remaining project responsibilities (Marble and freelance apps), dates and location (awaiting owner)
+- [ ] Remaining project responsibilities (Marble and Love In The Sky) and freelance project dates (awaiting owner)
