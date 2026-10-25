@@ -21,14 +21,15 @@ Read `README.md`, `docs/ARCHITECTURE.md`, and the PRDs in `docs/prd/` first.
 - Keep only consumed UI primitives and dependencies; unused TypeScript checks and project-data tests gate maintenance and deployment.
 - Route files in `src/routes/` stay thin: `head()` + a page component from `src/components/pages/`. No `src/pages/` folder — the router only reads `src/routes/`.
 - All case studies render through one route (`work.$slug.tsx`) and one component (`components/project/CaseStudy.tsx`) — never duplicate case-study markup per project.
-- Official project media is typed in `src/data/projectMedia.ts`; managed asset pointers serve development and identical optimized public files serve static production, so GitHub Pages never requires Lovable asset hosting.
-- Experience and education share typed CV entries and a single timeline; verified organization images use preview pointers and local production files, with initials for unavailable logos to avoid fabricated branding.
+- Official project media is typed in `src/data/projectMedia.ts`; images are plain files in `public/images/` referenced by path in dev and production, so the repo works with any tool or host.
+- Experience and education share typed CV entries and a single timeline; verified organization images are local files in `public/images/organizations/`, with initials for unavailable logos to avoid fabricated branding.
 - Project previews use MediaFrame's shared edge-to-edge cover layout; case studies render only gallery screenshots, never heroImage, to avoid repeating the merged preview cover.
 - Freelance entries reference shared project slugs; verbatim App Store descriptions stay in typed data and render separately from personal contributions to avoid attributing product features to the owner.
 - Missing content uses `ph()` from `src/lib/placeholder.ts` and renders via `TextValue` — keeps gaps visible and searchable.
 - SEO tags come from `buildHead()` in `src/lib/seo.ts`; og:image only on leaf routes with a real absolute image.
 - Motion is CSS plus `hooks/use-reveal.ts`; always respect `prefers-reduced-motion` — no animation libraries.
 - Styling uses semantic tokens in `src/styles.css` (oklch). No raw color utilities like `text-white` or hex values in components.
+- Lovable is optional tooling: no code may import Lovable runtime scripts or hosted assets; the only Lovable package is the public build-time `@lovable.dev/vite-tanstack-config`, replaceable with plain Vite plugins.
 - Production is static: all routes prerender to HTML for GitHub Pages; no backend, server routes, or Lovable runtime deps. When adding a published project, add its slug to `projectSlugs` in `vite.config.ts`.
 
 ## Conventions

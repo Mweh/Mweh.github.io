@@ -37,6 +37,10 @@ npx serve .output/public   # then open /work/koalafit directly in a fresh tab
 
 Note: `@lovable.dev/vite-tanstack-config` is a public npm package used only at build time (it bundles the Vite plugins). It is not shipped to visitors and needs no Lovable account; to remove it, replace it with the equivalent Vite plugins (`@tanstack/react-start/plugin`, `@vitejs/plugin-react`, `@tailwindcss/vite`, `vite-tsconfig-paths`).
 
+## Working outside Lovable
+
+Nothing in the code depends on a Lovable account: all images, the CV and icons live in `public/`, and there is no backend. Clone, `npm ci`, `npm run dev`, edit, push to `main` — GitHub Actions deploys. The `.lovable/` folder only holds old planning notes and can be ignored or deleted. `bunfig.toml` only matters if you use Bun.
+
 ## Where content lives
 
 All content is in `src/data/` — components never contain copy.
