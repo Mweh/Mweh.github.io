@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import type { Project, CaseStudy as CaseStudyData } from "@/types/project";
+import type { Project, CaseStudy as CaseStudyData, ProjectImage } from "@/types/project";
 import { publishedProjects } from "@/data/projects";
 import { Chip, Container, Eyebrow } from "@/components/common/Primitives";
 import { TextValue } from "@/components/common/TextValue";
@@ -7,6 +7,28 @@ import { ExternalLink } from "@/components/common/ExternalLink";
 import { isPlaceholder } from "@/lib/placeholder";
 import { useReveal } from "@/hooks/use-reveal";
 import { MediaFrame } from "./MediaFrame";
+
+/** One uncropped screenshot tile in the detail gallery. */
+function GalleryShot({ image }: { image: ProjectImage }) {
+  return (
+    <a
+      href={image.src}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block aspect-[6/13] overflow-hidden rounded-xl bg-surface focus-visible:outline-2 focus-visible:outline-ring"
+    >
+      <img
+        src={image.src}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        loading="lazy"
+        decoding="async"
+        className="h-full w-full object-contain"
+      />
+    </a>
+  );
+}
 
 /** Order and titles of the numbered case-study sections. */
 const sections: Array<{ key: keyof CaseStudyData; title: string; question: string }> = [
