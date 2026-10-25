@@ -125,23 +125,46 @@ export function CaseStudy({ project }: { project: Project }) {
           ))}
         </ul>
 
-        {project.heroImage && <MediaFrame
-          image={project.heroImage}
-          label={project.title}
-          caption={project.technologies.join(" · ")}
-          priority
-          className="mt-12"
-        />}
-
-        {project.gallery.length > 0 && (
-          <div className="mt-8 grid grid-cols-1 items-start gap-5 sm:grid-cols-3">
-            {project.gallery.map((image) => (
-              <a key={image.src} href={image.src} target="_blank" rel="noopener noreferrer" className="block aspect-[6/13] overflow-hidden rounded-xl bg-surface focus-visible:outline-2 focus-visible:outline-ring">
-                <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" className="h-full w-full object-contain" />
-              </a>
+        {project.heroImage && project.gallery.length > 0 ? (
+          // Detail view: the cover (also used on cards) appears second and uncropped,
+          // never as a cropped hero on top of the same screenshots.
+          <div className="mt-12 grid gap-5 sm:grid-cols-3">
+            {project.gallery[0] && <GalleryShot image={project.gallery[0]} />}
+            <a
+              href={project.heroImage.src}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block overflow-hidden rounded-xl bg-surface focus-visible:outline-2 focus-visible:outline-ring sm:col-span-2"
+            >
+              <img
+                src={project.heroImage.src}
+                alt={project.heroImage.alt}
+                width={project.heroImage.width}
+                height={project.heroImage.height}
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-contain"
+              />
+            </a>
+            {project.gallery.slice(1).map((image) => (
+              <GalleryShot key={image.src} image={image} />
             ))}
           </div>
-        )}
+        ) : project.heroImage ? (
+          <MediaFrame
+            image={project.heroImage}
+            label={project.title}
+            caption={project.technologies.join(" · ")}
+            priority
+            className="mt-12"
+          />
+        ) : project.gallery.length > 0 ? (
+          <div className="mt-12 grid grid-cols-1 items-start gap-5 sm:grid-cols-3">
+            {project.gallery.map((image) => (
+              <GalleryShot key={image.src} image={image} />
+            ))}
+          </div>
+        ) : null}
 
         <div className="mt-16">
           {project.appStoreDescription && <section aria-labelledby="app-store-description" className="border-t py-12">
