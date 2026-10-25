@@ -1,4 +1,5 @@
 # Portfolio improvements
+- [ ] Audit and unify project-image proportions, spacing and alignment across all pages
 - [x] Add Revigurize and Love in the Sky with official App Store descriptions, covers and freelance links
 - [x] Add supplied Qita, MyTelkomsel, KoalaFit and MindMories contributions with regression checks
 - [x] Add Marble UI-only cover and separate screens; use supplied description without members or emoji
