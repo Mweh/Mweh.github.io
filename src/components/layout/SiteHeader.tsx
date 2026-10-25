@@ -27,12 +27,12 @@ const linkClass =
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="no-print sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-md">
-      <Container className="flex h-16 items-center justify-between">
-        <Link to="/" className="text-[0.95rem] font-semibold tracking-tight">
+    <header className="no-print sticky top-0 z-40 border-b border-border/60 bg-background">
+      <Container className="grid h-16 grid-cols-[minmax(0,1fr)_auto] items-center sm:flex sm:justify-between">
+        <Link to="/" className="min-w-0 text-[0.95rem] font-semibold">
           {profile.name}
         </Link>
-        <nav aria-label="Main" className="hidden items-center gap-8 sm:flex">
+        <nav aria-label="Main" className="hidden shrink-0 items-center gap-8 sm:flex">
           {nav.map((item) => (
             <NavLink key={item.label} item={item} className={linkClass} />
           ))}
@@ -44,7 +44,7 @@ export function SiteHeader() {
           >
             <Menu className="size-5" />
           </SheetTrigger>
-          <SheetContent side="right" className="w-[82vw] max-w-sm">
+          <SheetContent side="right" className="w-[82vw] max-w-sm" aria-describedby={undefined}>
             <SheetTitle className="text-left">Menu</SheetTitle>
             <nav aria-label="Mobile" className="mt-8 flex flex-col gap-1">
               <Link to="/" onClick={() => setOpen(false)} className="py-3 text-2xl font-semibold">

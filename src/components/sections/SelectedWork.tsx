@@ -8,7 +8,7 @@ export function SelectedWork() {
   const large = featuredProjects.filter((p) => p.weight !== "compact");
   const compact = featuredProjects.filter((p) => p.weight === "compact");
   return (
-    <Section id="work" labelledBy="work-title" className="border-t">
+    <Section id="work" labelledBy="work-title" className="border-t pt-10 sm:pt-12">
       <SectionHeading
         id="work-title"
         eyebrow="Selected Work"
