@@ -6,6 +6,9 @@ export interface ExperienceEntry {
   organization: Text;
   period: Text;
   summary: Text;
+  location?: string;
+  highlights?: string[];
+  image?: { src: string; alt: string };
   /** Optional project slugs to link to (must exist in projects.ts). */
   projectSlugs?: string[];
 }

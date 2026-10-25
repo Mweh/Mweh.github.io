@@ -1,4 +1,5 @@
 # Portfolio improvements
+- [ ] Replace experience placeholders with CV experience and education, add official organization images, and verify layouts
 - [x] Align Qita, MyTelkomsel, KoalaFit and MindMories product descriptions with official App Store listings; preserve personal contributions
 - [x] Revert inset screenshot previews to full-bleed rounded covers and verify navigation and layout
 - [x] Audit and unify project-image proportions, spacing and alignment across all pages (320–1280px verified)
