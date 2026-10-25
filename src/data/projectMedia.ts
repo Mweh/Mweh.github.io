@@ -1,4 +1,8 @@
 import type { ProjectImage } from "@/types/project";
+import marbleCover from "@/assets/project-media/marble/cover.webp.asset.json";
+import marbleHome from "@/assets/project-media/marble/screen-1.webp.asset.json";
+import marbleImpact from "@/assets/project-media/marble/screen-2.webp.asset.json";
+import marbleReport from "@/assets/project-media/marble/screen-3.webp.asset.json";
 import qitabybri0 from "@/assets/project-media/qita-by-bri/cover.webp.asset.json";
 import qitabybri1 from "@/assets/project-media/qita-by-bri/screenshot-1.webp.asset.json";
 import qitabybri2 from "@/assets/project-media/qita-by-bri/screenshot-2.webp.asset.json";
@@ -20,6 +24,14 @@ import mindmories3 from "@/assets/project-media/mindmories/screenshot-3.webp.ass
 const source = (asset: { url: string }, path: string) => import.meta.env.DEV ? asset.url : path;
 
 export const projectMedia: Record<string, { heroImage: ProjectImage; gallery: ProjectImage[] }> = {
+  marble: {
+    heroImage: { src: source(marbleCover, "/images/projects/marble/cover.webp"), alt: "Marble app — home, screen-time impact, and report screens", width: 1026, height: 696 },
+    gallery: [
+      { src: source(marbleHome, "/images/projects/marble/screen-1.webp"), alt: "Marble home screen showing today's screen time", width: 339, height: 696 },
+      { src: source(marbleImpact, "/images/projects/marble/screen-2.webp"), alt: "Marble screen showing the long-term impact of screen time", width: 337, height: 696 },
+      { src: source(marbleReport, "/images/projects/marble/screen-3.webp"), alt: "Marble report showing screen-time totals and alternative activities", width: 336, height: 696 },
+    ],
+  },
   "qita-by-bri": {
     heroImage: { src: source(qitabybri0, "/images/projects/qita-by-bri/cover.webp"), alt: "Qita by BRI — official App Store screenshots", width: 1600, height: 948 },
     gallery: [

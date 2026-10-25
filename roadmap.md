@@ -1,4 +1,5 @@
 # Portfolio improvements
+- [x] Add Marble UI-only cover and separate screens; use supplied description without members or emoji
 - [x] Add the four official App Store links and screenshots, replace BRImo with Qita by BRI, and remove One More Inch
 - [x] Photo placement and shorter opening
 - [x] Compact no-image media and consistent radii
@@ -6,4 +7,4 @@
 - [x] Centralized positioning copy and KISS cleanup
 - [x] Not-found metadata and deployment test gate
 - [x] Documentation and preview verification (five tests, navigation, metadata, key contrast, reduced motion)
-- [ ] Owner-supplied project details, dates, location and Marble screenshots (awaiting owner)
+- [ ] Owner-supplied project responsibilities, dates and location (awaiting owner)
