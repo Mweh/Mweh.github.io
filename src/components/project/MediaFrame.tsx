@@ -16,7 +16,7 @@ export function MediaFrame({
   priority?: boolean;
 }) {
   return (
-    <div className={cn("relative overflow-hidden rounded-xl bg-surface", image ? "aspect-[4/3]" : "min-h-28", className)}>
+    <div className={cn("relative overflow-hidden rounded-xl bg-surface", image ? "aspect-[16/9]" : "min-h-28", className)}>
       {image ? (
         <img
           src={image.src}
