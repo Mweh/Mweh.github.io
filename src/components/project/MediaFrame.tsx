@@ -20,7 +20,7 @@ export function MediaFrame({
   const screenshots = images.slice(0, 3);
   const hasScreenshots = screenshots.length > 0;
   return (
-    <div className={cn("relative overflow-hidden rounded-lg border bg-surface", image || hasScreenshots ? "aspect-[4/3]" : "min-h-28", className)}>
+    <div className={cn("relative overflow-hidden rounded-lg border bg-surface", image || hasScreenshots ? "aspect-[16/9]" : "min-h-28", className)}>
       {hasScreenshots ? (
         <div className="grid h-full grid-cols-3 gap-2 p-2">
           {screenshots.map((screenshot) => (
