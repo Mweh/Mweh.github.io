@@ -18,7 +18,7 @@ const projects: Project[] = [
     featured: true,
     order: 1,
     published: true,
-    year: ph("Years active"),
+    year: "Jun 2025 – Apr 2026",
     role: "iOS Developer",
     description: "Mobile banking for transfers, bill payments, top-ups, balance tracking and QRIS payments.",
     summary:
@@ -53,7 +53,7 @@ const projects: Project[] = [
     featured: true,
     order: 2,
     published: true,
-    year: ph("Years active"),
+    year: "Sep 2023 – Feb 2025",
     role: "iOS Developer",
     description: "Manage Telkomsel, IndiHome and Orbit accounts, buy data packages, make payments and explore offers.",
     summary: "MyTelkomsel brings Telkomsel, IndiHome and Orbit accounts together in one app. Users can check credit and validity, buy data and roaming packages, make payments, explore personalized offers and get help from Veronika.",
@@ -89,7 +89,7 @@ const projects: Project[] = [
     featured: true,
     order: 3,
     published: true,
-    year: ph("Release year"),
+    year: "Apr 2026",
     role: "iOS Developer — technical development and App Store delivery",
     description: "Simple workout tracking with daily progress, consistency monitoring and motivational reminders.",
     summary:
@@ -129,7 +129,7 @@ const projects: Project[] = [
     featured: true,
     order: 4,
     published: true,
-    year: ph("Year"),
+    year: "Jun 2026",
     role: "CI/CD implementation",
     description: "Context-aware photo reminders based on locations and calendar events, helping preserve meaningful moments.",
     summary:
@@ -167,8 +167,8 @@ const projects: Project[] = [
     featured: true,
     order: 5,
     published: true,
-    year: ph("Year"),
-    role: ph("Role on the team"),
+    year: "Aug 2026",
+    role: "iOS Developer",
     description: "Helping people reduce doomscrolling through app friction, timely reminders, and screen-time insights.",
     summary:
       "Marble helps people reduce doomscrolling by building awareness and healthier screen-time habits through app friction, timely interventions, and progress visualization.",
@@ -193,7 +193,7 @@ const projects: Project[] = [
         "Doomscrolling can become an unconscious habit, triggered by muscle memory or notifications rather than deliberate intention. People may only notice how much time has passed afterward, and easy access makes it difficult to break the cycle.",
         "The effects are not always immediate or equally noticeable for everyone, which can allow the habit to continue unnoticed.",
       ],
-      role: [ph("Your contribution")],
+      role: ["Developed the iOS app as the project's iOS Developer."],
       approach: [ph("How you approached designing friction")],
       engineering: [
         "Built on Apple's Screen Time APIs — FamilyControls, ManagedSettings and DeviceActivity — with SwiftUI, UIKit, UserNotifications and Charts.",
@@ -229,7 +229,7 @@ const projects: Project[] = [
     caseStudy: {
       context: ["Freelance iOS project for a client in the Netherlands. The product description below is sourced from its official App Store listing."],
       problem: [ph("Client problem")],
-      role: [ph("Your specific contribution to Revigurize")],
+      role: ["Handled the App Store submission and release process, including responding to App Review feedback and resolving rejections until approval."],
       approach: [ph("Approach")],
       engineering: [ph("Technologies and technical decisions")],
       productUx: [ph("Product and UX contribution")],
@@ -258,7 +258,7 @@ const projects: Project[] = [
     caseStudy: {
       context: ["Freelance iOS project for a client in the United States. The product description below is sourced from its official App Store listing."],
       problem: [ph("Client problem")],
-      role: [ph("Your specific contribution to Love In The Sky")],
+      role: ["Handled the App Store submission and release process, including responding to App Review feedback and resolving rejections until approval."],
       approach: [ph("Approach")],
       engineering: [ph("Technologies and technical decisions")],
       productUx: [ph("Product and UX contribution")],
