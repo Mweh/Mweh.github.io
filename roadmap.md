@@ -1,4 +1,5 @@
 # Portfolio improvements
+- [ ] Add the four official App Store links and screenshots, replace BRImo with Qita by BRI, and remove One More Inch
 - [x] Photo placement and shorter opening
 - [x] Compact no-image media and consistent radii
 - [x] Actionable résumé links and portrait crop
