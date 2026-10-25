@@ -85,16 +85,16 @@ export function CaseStudy({ project }: { project: Project }) {
             <dt className="text-muted-foreground">Year</dt>
             <dd className="mt-1 font-medium"><TextValue value={project.year} /></dd>
           </div>}
-          {project.caseStudy.role[0] && !isPlaceholder(project.caseStudy.role[0]) && <div>
+          <div>
             <dt className="text-muted-foreground">Type</dt>
             <dd className="mt-1 font-medium">{project.type ?? project.category}</dd>
-          </div>}
-          <div>
+          </div>
+          {project.caseStudy.role[0] && !isPlaceholder(project.caseStudy.role[0]) && <div>
             <dt className="text-muted-foreground">Contribution</dt>
             <dd className="mt-1 font-medium">
               <TextValue value={project.caseStudy.role[0] ?? project.role} />
             </dd>
-          </div>
+          </div>}
         </dl>
 
         <ul aria-label="Technologies" className="mt-8 flex flex-wrap gap-2">
