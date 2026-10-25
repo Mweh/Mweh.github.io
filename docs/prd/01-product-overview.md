@@ -21,7 +21,7 @@ A professional communication tool for Muhammad Fahmi, iOS Developer. It answers 
 
 **Must**
 - Present him as an experienced professional; the Apple Developer Academy is shown as continued professional development, never as a junior signal.
-- Show production work (BRImo, MyTelkomsel) and shipped apps (KoalaFit) above learning projects.
+- Show production work (Qita by BRI, MyTelkomsel) and shipped apps (KoalaFit) above learning projects.
 - Make contact and CV reachable from every page.
 - Contain only true facts. Unknown details are visible placeholders.
 

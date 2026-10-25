@@ -7,7 +7,7 @@ Define what the portfolio shows, in what order, and how it is written.
 ## Home page order
 
 1. **Hero** — name, title, years, one-line claim, core technologies, primary actions (View work, Contact, CV).
-2. **Selected Work** — large cards: BRImo, MyTelkomsel, KoalaFit. Compact row: MindMories, Marble, One More Inch.
+2. **Selected Work** — large cards: Qita by BRI, MyTelkomsel, KoalaFit. Compact row: MindMories, Marble.
 3. **Experience** — Professional → International freelance (Netherlands, United States) → Apple Developer Academy.
 4. **Skills** — short grouped list; only skills that can be defended in an interview.
 5. **About** — brief, factual, product-minded positioning.

@@ -8,11 +8,11 @@
 | Done | Email, LinkedIn, GitHub, Upwork URLs supplied | `src/data/socialLinks.ts` |
 | Done | CV PDF supplied | `public/cv/`, `profile.cvUrl` |
 | Done | GitHub username Mweh and site URL confirmed | `src/data/profile.ts` default |
-| High | BRImo and MyTelkomsel role, responsibilities, dates | `src/data/projects.ts`, `experience.ts` |
+| High | Qita by BRI and MyTelkomsel role, responsibilities, dates | `src/data/projects.ts`, `experience.ts` |
 | Medium | Employment dates for all entries | `src/data/experience.ts` |
 | Medium | Location | `src/data/profile.ts` |
 | Medium | Netherlands and United States freelance details (or neutral descriptions if confidential) | `src/data/freelance.ts` |
-| Medium | App Store / GitHub links for KoalaFit, MindMories | `src/data/projects.ts` |
+| Done / Medium | App Store links supplied for KoalaFit, MindMories, Qita by BRI, MyTelkomsel; public GitHub project links still needed | `src/data/projects.ts` |
 | Medium | Real app screenshots | `public/images/projects/<slug>/` |
 | Done | Portrait photo and header banner | `public/images/profile/` |
 | Low | Whether Arterious should be public | `published` flag |
