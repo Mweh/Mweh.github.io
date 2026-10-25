@@ -36,7 +36,10 @@ export function FreelanceBlock() {
         {freelance.map((f) => {
           const project = f.projectSlug ? getProject(f.projectSlug) : undefined;
           return (
-          <article key={f.id} className="rounded-lg border bg-surface p-6 sm:p-8">
+          <article key={f.id} className="flex min-w-0 flex-col">
+            {project && <Link to="/work/$slug" params={{ slug: project.slug }} aria-label={`${project.title} case study`} className="mb-5 block rounded-lg focus-visible:outline-2 focus-visible:outline-ring">
+              <MediaFrame image={project.heroImage} images={project.gallery} label={project.title} />
+            </Link>}
             <p className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
               {f.country}
             </p>
@@ -44,13 +47,10 @@ export function FreelanceBlock() {
               <TextValue value={f.client} />
             </h4>
             {project && <>
-              <Link to="/work/$slug" params={{ slug: project.slug }} aria-label={`${project.title} case study`} className="mt-5 block focus-visible:outline-2 focus-visible:outline-ring">
-                <MediaFrame image={project.heroImage} label={project.title} />
-              </Link>
-              <p className="mt-5 text-sm text-pretty text-muted-foreground">{project.description}</p>
+              <p className="mt-2 text-sm text-pretty text-muted-foreground">{project.description}</p>
               <Link to="/work/$slug" params={{ slug: project.slug }} className="mt-4 inline-flex text-sm font-medium text-accent hover:underline">View project →</Link>
             </>}
-            <dl className="mt-6 space-y-3 text-sm">
+            {fields.some(([key]) => !isPlaceholder(f[key])) && <dl className="mt-6 space-y-3 text-sm">
               {fields.filter(([key]) => !isPlaceholder(f[key])).map(([key, label]) => (
                 <div key={key} className="grid gap-1 sm:grid-cols-[9rem_1fr]">
                   <dt className="text-muted-foreground">{label}</dt>
@@ -59,7 +59,7 @@ export function FreelanceBlock() {
                   </dd>
                 </div>
               ))}
-            </dl>
+            </dl>}
           </article>
           );
         })}
