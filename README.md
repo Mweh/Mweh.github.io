@@ -51,7 +51,7 @@ All content is in `src/data/` — components never contain copy.
 | `skills.ts` | Grouped skills |
 | `site.ts` | Shared positioning and section copy |
 
-Missing information is written as `ph("what is missing")`: development shows a dashed "To be added" label, while production shows "Available on request" for retained fields. Search for `ph(` to find everything still to fill in.
+Missing information is written as `ph("what is missing")`: development shows a dashed "To be added" label, while the published site hides it entirely — no placeholder text is ever rendered. Search for `ph(` to find everything still to fill in.
 
 ## Add a project
 
