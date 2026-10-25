@@ -1,6 +1,7 @@
 import { ph } from "@/lib/placeholder";
 import type { Project } from "@/types/project";
 import { projectMedia } from "./projectMedia";
+import { appStoreDescriptions } from "./appStoreDescriptions";
 
 /**
  * All projects. Add a project by appending one object — the card, case-study page,
@@ -134,7 +135,7 @@ const projects: Project[] = [
     description: "A SwiftUI app built on PhotoKit, Vision, CoreLocation and UserNotifications.",
     summary:
       "MindMories is an independent iOS project in SwiftUI and MVVM, integrating native Apple frameworks: PhotoKit, Vision, CoreLocation and UserNotifications.",
-    technologies: ["SwiftUI", "MVVM", "PhotoKit", "Vision", "CoreLocation", "UserNotifications"],
+    technologies: ["SwiftUI", "MVVM", "PhotoKit", "Vision", "CoreLocation", "UserNotifications", "CI/CD", "TestFlight"],
     heroImage: projectMedia["mindmories"]?.heroImage,
     gallery: projectMedia["mindmories"]?.gallery ?? [],
     links: [
@@ -210,6 +211,64 @@ const projects: Project[] = [
     },
   },
   {
+    slug: "revigurize",
+    title: "Revigurize",
+    category: "International Freelance",
+    type: "Freelance / Netherlands",
+    featured: false,
+    order: 6,
+    published: true,
+    year: ph("Freelance period"),
+    role: "Freelance iOS Developer",
+    description: "A seven-month hair-growth companion with guided monthly photos, progress comparisons, reminders, and English and Dutch support.",
+    summary: "Revigurize is a hair-growth tracking companion. International freelance iOS work for a client in the Netherlands.",
+    appStoreDescription: appStoreDescriptions.revigurize,
+    technologies: [],
+    heroImage: projectMedia.revigurize?.heroImage,
+    gallery: projectMedia.revigurize?.gallery ?? [],
+    links: [{ label: "App Store", href: "https://apps.apple.com/us/app/revigurize/id6757760154" }],
+    caseStudy: {
+      context: ["Freelance iOS project for a client in the Netherlands. The product description below is sourced from its official App Store listing."],
+      problem: [ph("Client problem")],
+      role: [ph("Your specific contribution to Revigurize")],
+      approach: [ph("Approach")],
+      engineering: [ph("Technologies and technical decisions")],
+      productUx: [ph("Product and UX contribution")],
+      challenges: [ph("Challenges")],
+      outcome: [ph("Outcome")],
+      reflection: [ph("Reflection")],
+    },
+  },
+  {
+    slug: "love-in-the-sky",
+    title: "Love In The Sky",
+    category: "International Freelance",
+    type: "Freelance / United States",
+    featured: false,
+    order: 7,
+    published: true,
+    year: ph("Freelance period"),
+    role: "Freelance iOS Developer",
+    description: "A dating and social-connection app for aviation professionals, with aviation-focused profiles, crew matching, and layover connections.",
+    summary: "Love In The Sky connects aviation professionals for dating and social connections. International freelance iOS work for a client in the United States.",
+    appStoreDescription: appStoreDescriptions["love-in-the-sky"],
+    technologies: [],
+    heroImage: projectMedia["love-in-the-sky"]?.heroImage,
+    gallery: projectMedia["love-in-the-sky"]?.gallery ?? [],
+    links: [{ label: "App Store", href: "https://apps.apple.com/us/app/love-in-the-sky/id6791453047" }],
+    caseStudy: {
+      context: ["Freelance iOS project for a client in the United States. The product description below is sourced from its official App Store listing."],
+      problem: [ph("Client problem")],
+      role: [ph("Your specific contribution to Love In The Sky")],
+      approach: [ph("Approach")],
+      engineering: [ph("Technologies and technical decisions")],
+      productUx: [ph("Product and UX contribution")],
+      challenges: [ph("Challenges")],
+      outcome: [ph("Outcome")],
+      reflection: [ph("Reflection")],
+    },
+  },
+  {
     slug: "arterious",
     title: "Arterious",
     category: "Apple Developer Academy",
@@ -246,4 +305,4 @@ export const featuredProjects = publishedProjects.filter((p) => p.featured);
 
 export const getProject = (slug: string) => publishedProjects.find((p) => p.slug === slug);
 
-export const projectCategories = ["Production", "Independent", "Apple Developer Academy"] as const;
+export const projectCategories = ["Production", "Independent", "International Freelance", "Apple Developer Academy"] as const;
