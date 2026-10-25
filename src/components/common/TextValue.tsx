@@ -2,14 +2,12 @@ import { isPlaceholder, type Text } from "@/lib/placeholder";
 import { cn } from "@/lib/utils";
 
 /**
- * Renders real text. Missing content shows as a dashed "To be added" label while
- * developing, and as a quiet "Available on request" on the published site.
+ * Renders real text. Missing content renders as a dashed "To be added" label while
+ * developing, and as nothing at all on the published site — gaps stay hidden.
  */
 export function TextValue({ value, className }: { value: Text; className?: string }) {
   if (isPlaceholder(value)) {
-    if (!import.meta.env.DEV) {
-      return <span className={cn("text-muted-foreground", className)}>Available on request</span>;
-    }
+    if (!import.meta.env.DEV) return null;
     return (
       <span
         className={cn(
