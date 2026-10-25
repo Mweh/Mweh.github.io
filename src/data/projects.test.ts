@@ -25,14 +25,16 @@ describe("projects", () => {
     expect(marble?.links.every((l) => isPlaceholder(l.href))).toBe(true);
   });
 
-  test.each([
+  for (const [slug, href] of [
     ["koalafit", "https://apps.apple.com/us/app/koalafit/id6774622691"],
     ["mindmories", "https://apps.apple.com/id/app/mindmories/id6786116342"],
     ["qita-by-bri", "https://apps.apple.com/id/app/qita-by-bri/id6747552980"],
     ["mytelkomsel", "https://apps.apple.com/id/app/mytelkomsel/id651412430"],
-  ])("%s uses the owner's official App Store link", (slug, href) => {
-    expect(getProject(slug)?.links.find((l) => l.label === "App Store")?.href).toBe(href);
-  });
+  ]) {
+    test(`${slug} uses the owner's official App Store link`, () => {
+      expect(getProject(slug ?? "")?.links.find((l) => l.label === "App Store")?.href).toBe(href);
+    });
+  }
 
   test("Qita by BRI replaces BRImo", () => {
     expect(getProject("qita-by-bri")?.title).toBe("Qita by BRI");
