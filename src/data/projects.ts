@@ -224,8 +224,8 @@ const projects: Project[] = [
     summary: "Revigurize is a hair-growth tracking companion. International freelance iOS work for a client in the Netherlands.",
     appStoreDescription: appStoreDescriptions.revigurize,
     technologies: [],
-    heroImage: projectMedia.revigurize?.heroImage,
-    gallery: projectMedia.revigurize?.gallery ?? [],
+    heroImage: projectMedia["revigurize"]?.heroImage,
+    gallery: projectMedia["revigurize"]?.gallery ?? [],
     links: [{ label: "App Store", href: "https://apps.apple.com/us/app/revigurize/id6757760154" }],
     caseStudy: {
       context: ["Freelance iOS project for a client in the Netherlands. The product description below is sourced from its official App Store listing."],

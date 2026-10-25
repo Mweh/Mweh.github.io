@@ -9,7 +9,7 @@ import { Link } from "@tanstack/react-router";
 import { getProject } from "@/data/projects";
 import { MediaFrame } from "@/components/project/MediaFrame";
 
-const fields: Array<[keyof FreelanceEntry, string]> = [
+const fields: Array<[Exclude<keyof FreelanceEntry, "projectSlug">, string]> = [
   ["industry", "Client / Industry"],
   ["role", "My Role"],
   ["problem", "Problem"],

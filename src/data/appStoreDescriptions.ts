@@ -1,5 +1,5 @@
 /** Official App Store listing descriptions; product claims are not personal contributions. */
-export const appStoreDescriptions: Record<string, string[]> = {
+export const appStoreDescriptions = {
   "revigurize": [
     "Revigurize is your personal hair growth companion, designed to help you document your journey over a 7 month period.",
     "This app supports the Revigurize program by making it easy to capture monthly progress photos and visually track changes over time in one private and secure place.",
