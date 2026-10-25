@@ -1,4 +1,5 @@
 import type { ExperienceEntry } from "@/types/experience";
+import { organizationMedia } from "./organizationMedia";
 
 export const experienceContent = {
   eyebrow: "Experience & Education",
@@ -11,6 +12,7 @@ export const experienceContent = {
 export const experience: ExperienceEntry[] = [
   {
     id: "revigurize",
+    image: organizationMedia.revigurize,
     role: "iOS Developer · Freelance",
     organization: "Revigurize",
     location: "Netherlands",
@@ -20,6 +22,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     id: "qita",
+    image: organizationMedia.qita,
     role: "iOS Developer · Contract",
     organization: "Qita by BRI",
     location: "Jakarta, Indonesia",
@@ -38,6 +41,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     id: "mytelkomsel",
+    image: organizationMedia.mytelkomsel,
     role: "iOS Developer · Full-time",
     organization: "MyTelkomsel",
     location: "Jakarta, Indonesia",
@@ -60,6 +64,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     id: "umi",
+    image: organizationMedia.umi,
     role: "Computer Lab Assistant · Volunteer",
     organization: "Fakultas Ilmu Komputer · Universitas Muslim Indonesia",
     period: "Feb 2021 – Jul 2022",
@@ -79,6 +84,7 @@ export const education: ExperienceEntry[] = [
   },
   {
     id: "umi-degree",
+    image: organizationMedia.umi,
     role: "Bachelor of Computer Science",
     organization: "Universitas Muslim Indonesia",
     location: "Makassar, Indonesia",
@@ -95,6 +101,7 @@ export const education: ExperienceEntry[] = [
   },
   {
     id: "darmstadt",
+    image: organizationMedia.darmstadt,
     role: "Studienkolleg",
     organization: "Technische Universität Darmstadt",
     location: "Darmstadt, Germany",

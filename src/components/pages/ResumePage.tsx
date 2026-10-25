@@ -1,6 +1,6 @@
 import { Download, Printer } from "lucide-react";
 import { profile } from "@/data/profile";
-import { experience } from "@/data/experience";
+import { experience, education, experienceContent } from "@/data/experience";
 import { skillGroups } from "@/data/skills";
 import { featuredProjects } from "@/data/projects";
 import { socialLinks } from "@/data/socialLinks";
@@ -67,6 +67,18 @@ export function ResumePage() {
               <p className="mt-1"><TextValue value={e.summary} /></p>
             </li>
           ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="r-education" className="mt-12 border-t pt-8">
+        <h2 id="r-education" className="text-sm font-semibold uppercase tracking-[0.12em]">{experienceContent.educationTitle}</h2>
+        <ul className="mt-6 space-y-6">
+          {education.map((entry) => <li key={entry.id}>
+            <h3 className="font-semibold">{entry.role}</h3>
+            <p className="text-muted-foreground"><TextValue value={entry.organization} /></p>
+            <p className="mt-1 font-mono text-sm text-muted-foreground"><TextValue value={entry.period} /></p>
+            <p className="mt-2"><TextValue value={entry.summary} /></p>
+          </li>)}
         </ul>
       </section>
 
