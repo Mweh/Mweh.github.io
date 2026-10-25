@@ -4,12 +4,13 @@
 
 | Priority | Item | Where it goes |
 |---|---|---|
-| High | Confirm 3+ or 5+ years | `src/data/profile.ts` |
-| High | Email, LinkedIn, GitHub, Upwork URLs | `src/data/socialLinks.ts` |
-| High | CV PDF | `public/cv/`, `profile.cvUrl` |
-| High | Real GitHub username (for site URL) | `src/data/profile.ts` default |
+| Done | 3+ years confirmed | `src/data/profile.ts` |
+| Done | Email, LinkedIn, GitHub, Upwork URLs supplied | `src/data/socialLinks.ts` |
+| Done | CV PDF supplied | `public/cv/`, `profile.cvUrl` |
+| Done | GitHub username Mweh and site URL confirmed | `src/data/profile.ts` default |
 | High | BRImo and MyTelkomsel role, responsibilities, dates | `src/data/projects.ts`, `experience.ts` |
 | Medium | Employment dates for all entries | `src/data/experience.ts` |
+| Medium | Location | `src/data/profile.ts` |
 | Medium | Netherlands and United States freelance details (or neutral descriptions if confidential) | `src/data/freelance.ts` |
 | Medium | App Store / GitHub links for KoalaFit, MindMories | `src/data/projects.ts` |
 | Medium | Real app screenshots | `public/images/projects/<slug>/` |
@@ -33,3 +34,11 @@
 - Screenshot frames replaced by title tiles until real screenshots exist.
 - Unused UI primitives deleted; tests in `src/data/projects.test.ts` (`bun test src/data`).
 - Still open: Apple touch icon (needs a real icon image), all owner-supplied content above.
+
+## Focused design and KISS audit 2026-10-25
+
+- Small portrait introduced in the opening; larger About portrait precedes biography on phones. Cover reserved for sharing.
+- Shorter opening and compact screenshot-free project tiles; no empty case-study media panel.
+- Résumé profile links actionable; shared positioning copy centralized.
+- Unused Query provider, UI scaffolding and dependencies removed; unused-code checks enabled.
+- Project-data tests now gate GitHub Pages deployment.

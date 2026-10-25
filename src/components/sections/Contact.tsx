@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { socialLinks } from "@/data/socialLinks";
+import { siteContent } from "@/data/site";
 import { Section } from "@/components/common/Primitives";
 import { TextValue } from "@/components/common/TextValue";
 import { isPlaceholder } from "@/lib/placeholder";
@@ -11,7 +12,7 @@ export function Contact() {
         id="contact-title"
         className="max-w-3xl text-4xl font-semibold tracking-[-0.03em] text-balance sm:text-6xl"
       >
-        Have an iOS project in mind?
+        {siteContent.contactTitle}
       </h2>
       <ul className="mt-12 divide-y border-y">
         {socialLinks.map((l) => (

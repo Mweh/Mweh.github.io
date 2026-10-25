@@ -12,7 +12,8 @@ export interface Profile {
   academyLine: string;
   freelanceStatement: string;
   about: string[];
-  portrait?: { src: string; alt: string };
+  portrait?: { src: string; alt: string; width: number; height: number };
+  avatar?: { src: string; alt: string; width: number; height: number };
   banner?: { src: string; alt: string; width: number; height: number };
   /** Path to the CV PDF in /public, or a placeholder until provided. */
   cvUrl: string;

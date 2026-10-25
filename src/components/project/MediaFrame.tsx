@@ -16,7 +16,7 @@ export function MediaFrame({
   priority?: boolean;
 }) {
   return (
-    <div className={cn("relative aspect-[4/3] overflow-hidden rounded-xl border bg-surface", className)}>
+    <div className={cn("relative overflow-hidden rounded-lg border bg-surface", image ? "aspect-[4/3]" : "min-h-28", className)}>
       {image ? (
         <img
           src={image.src}
@@ -28,8 +28,8 @@ export function MediaFrame({
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
         />
       ) : (
-        <div aria-hidden className="flex h-full flex-col justify-end p-6 sm:p-8">
-          <p className="text-3xl font-semibold tracking-[-0.03em] text-foreground/90 sm:text-4xl">{label}</p>
+        <div aria-hidden className="flex h-full flex-col justify-end p-6">
+          <p className="text-2xl font-semibold text-foreground/90">{label}</p>
           {caption && <p className="mt-2 font-mono text-xs text-muted-foreground">{caption}</p>}
         </div>
       )}

@@ -1,5 +1,6 @@
 import { freelance, freelanceStrengths } from "@/data/freelance";
 import { profile } from "@/data/profile";
+import { siteContent } from "@/data/site";
 import { Chip } from "@/components/common/Primitives";
 import { TextValue } from "@/components/common/TextValue";
 import { isPlaceholder } from "@/lib/placeholder";
@@ -19,7 +20,7 @@ const fields: Array<[keyof FreelanceEntry, string]> = [
 export function FreelanceBlock() {
   return (
     <div id="freelance" className="mt-16 scroll-mt-24">
-      <h3 className="text-2xl font-semibold tracking-tight">International freelance · Netherlands · United States</h3>
+      <h3 className="text-2xl font-semibold tracking-tight">{siteContent.freelanceTitle}</h3>
       <p className="mt-3 max-w-2xl text-pretty text-muted-foreground">{profile.freelanceStatement}</p>
       <ul aria-label="Ways of working" className="mt-6 mb-10 flex flex-wrap gap-2">
         {freelanceStrengths.map((s) => (
@@ -30,7 +31,7 @@ export function FreelanceBlock() {
       </ul>
       <div className="grid gap-6 md:grid-cols-2">
         {freelance.map((f) => (
-          <article key={f.id} className="rounded-2xl border bg-surface p-6 sm:p-8">
+          <article key={f.id} className="rounded-lg border bg-surface p-6 sm:p-8">
             <p className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
               {f.country}
             </p>

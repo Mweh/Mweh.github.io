@@ -9,19 +9,23 @@ import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section aria-labelledby="hero-title" className="pt-16 pb-20 sm:pt-28 sm:pb-28">
+    <section aria-labelledby="hero-title" className="pt-10 pb-12 sm:pt-14 sm:pb-16 lg:pt-20 lg:pb-20">
       <Container>
         <div className="animate-enter max-w-4xl">
-          <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+          <div className="flex items-center gap-4">
+            {profile.avatar && (
+              <img src={profile.avatar.src} alt={profile.avatar.alt} width={profile.avatar.width} height={profile.avatar.height} decoding="async" className="size-16 shrink-0 rounded-lg border object-cover sm:size-20" />
+            )}
+          <p className="min-w-0 text-sm text-muted-foreground">
             <span className="font-medium text-foreground">{profile.name}</span>
-            <span aria-hidden className="h-3 w-px bg-border" />
-            <span>
+            <span className="mt-1 block">
               {profile.title} · {profile.experienceYears} years
             </span>
           </p>
+          </div>
           <h1
             id="hero-title"
-            className="mt-6 text-[2.6rem] leading-[1.05] font-semibold tracking-[-0.035em] text-balance sm:text-6xl lg:text-7xl"
+            className="mt-6 text-4xl leading-[1.1] font-semibold text-balance sm:text-5xl lg:text-6xl"
           >
             {profile.headline}
           </h1>
@@ -36,7 +40,7 @@ export function Hero() {
               </li>
             ))}
           </ul>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg" className="h-12 rounded-full px-6">
               <Link to="/" hash="work">
                 View Selected Work <ArrowDown aria-hidden />
@@ -48,7 +52,7 @@ export function Hero() {
                 </a>
               </Button>
           </div>
-          <ul aria-label="Profiles" className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <ul aria-label="Profiles" className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
             {socialLinks.map((l) =>
               isPlaceholder(l.href) ? null : (
                 <li key={l.id}>

@@ -81,20 +81,20 @@ export function CaseStudy({ project }: { project: Project }) {
             <dt className="text-muted-foreground">Role</dt>
             <dd className="mt-1 font-medium"><TextValue value={project.role} /></dd>
           </div>
-          <div>
+          {!isPlaceholder(project.year) && <div>
             <dt className="text-muted-foreground">Year</dt>
             <dd className="mt-1 font-medium"><TextValue value={project.year} /></dd>
-          </div>
+          </div>}
           <div>
             <dt className="text-muted-foreground">Type</dt>
             <dd className="mt-1 font-medium">{project.type ?? project.category}</dd>
           </div>
-          <div>
+          {project.caseStudy.role[0] && !isPlaceholder(project.caseStudy.role[0]) && <div>
             <dt className="text-muted-foreground">Contribution</dt>
             <dd className="mt-1 font-medium">
               <TextValue value={project.caseStudy.role[0] ?? project.role} />
             </dd>
-          </div>
+          </div>}
         </dl>
 
         <ul aria-label="Technologies" className="mt-8 flex flex-wrap gap-2">
@@ -103,13 +103,13 @@ export function CaseStudy({ project }: { project: Project }) {
           ))}
         </ul>
 
-        <MediaFrame
+        {project.heroImage && <MediaFrame
           image={project.heroImage}
           label={project.title}
           caption={project.technologies.join(" · ")}
           priority
           className="mt-12 aspect-[16/9]"
-        />
+        />}
 
         <div className="mt-16">
           {visible.map((s, i) => (
@@ -152,7 +152,7 @@ export function CaseStudy({ project }: { project: Project }) {
           <Link
             to="/work/$slug"
             params={{ slug: next.slug }}
-            className="group block rounded-2xl border bg-surface p-8 transition-colors hover:bg-secondary sm:p-12"
+            className="group block rounded-lg border bg-surface p-8 transition-colors hover:bg-secondary sm:p-12"
           >
             <Eyebrow>Next project</Eyebrow>
             <p className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
