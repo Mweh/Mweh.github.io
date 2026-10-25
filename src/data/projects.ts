@@ -20,15 +20,15 @@ const projects: Project[] = [
     published: true,
     year: ph("Years active"),
     role: "iOS Developer",
-    description: "Native iOS development on a production-scale financial application.",
+    description: "Mobile banking for transfers, bill payments, top-ups, balance tracking and QRIS payments.",
     summary:
-      "Professional iOS development on Qita by BRI, a production financial application.",
+      "Qita by BRI brings everyday banking to a smartphone: money transfers, bill payments, top-ups, real-time balances and transaction history, and QRIS payments.",
     technologies: ["Swift", "UIKit", "SnapKit", "Mockoon", "API integration"],
     heroImage: projectMedia["qita-by-bri"]?.heroImage,
     gallery: projectMedia["qita-by-bri"]?.gallery ?? [],
     links: [{ label: "App Store", href: "https://apps.apple.com/id/app/qita-by-bri/id6747552980" }],
     caseStudy: {
-      context: ["Qita by BRI is a production financial application on iOS."],
+      context: ["Qita by BRI is a mobile banking app for managing everyday finances. Its App Store listing highlights interbank transfers, bill payments and top-ups, real-time balances and transaction history, QRIS payments, and transaction notifications."],
       problem: [ph("Problem or goal of the work you contributed to")],
        role: [
          "Participated in Squad Madrid (investment feature) and Squad Nairobi (onboarding feature), integrating new APIs, implementing revamped UI, and fixing bugs during UAT.",
@@ -55,14 +55,14 @@ const projects: Project[] = [
     published: true,
     year: ph("Years active"),
     role: "iOS Developer",
-    description: "Native iOS development on a production telecommunications application.",
-    summary: "Professional native iOS development on the MyTelkomsel production application.",
+    description: "Manage Telkomsel, IndiHome and Orbit accounts, buy data packages, make payments and explore offers.",
+    summary: "MyTelkomsel brings Telkomsel, IndiHome and Orbit accounts together in one app. Users can check credit and validity, buy data and roaming packages, make payments, explore personalized offers and get help from Veronika.",
     technologies: ["Swift", "UIKit", "SnapKit", "RxSwift", "MVVM-C", "Figma", "GitLab CI/CD", "Git", "GitLens", "Mockoon", "Firebase Remote Config", "App Store Connect", "Confluence", "Jira", "Miro"],
     heroImage: projectMedia["mytelkomsel"]?.heroImage,
     gallery: projectMedia["mytelkomsel"]?.gallery ?? [],
     links: [{ label: "App Store", href: "https://apps.apple.com/id/app/mytelkomsel/id651412430" }],
     caseStudy: {
-      context: ["MyTelkomsel is a production application on iOS."],
+      context: ["MyTelkomsel provides one place to manage Telkomsel, IndiHome and Orbit accounts. Its App Store listing covers account information, personalized data packages, roaming plans, Telkomsel Wallet by GoPay, lifestyle services and support through the Veronika virtual assistant."],
       problem: [ph("Problem or goal of the work you contributed to")],
        role: [
          "Maintained the MyTelkomsel app on the App Store for Telkomsel, Indonesia’s largest cellular operator.",
@@ -91,9 +91,9 @@ const projects: Project[] = [
     published: true,
     year: ph("Release year"),
     role: "iOS Developer — technical development and App Store delivery",
-    description: "A shipped App Store app combining HealthKit, Apple Watch and AI-assisted onboarding.",
+    description: "Simple workout tracking with daily progress, consistency monitoring and motivational reminders.",
     summary:
-      "KoalaFit is a shipped App Store project built with SwiftUI and MVVM, integrating HealthKit, Apple Watch, AI-powered onboarding with Gemini, and food scanning.",
+      "KoalaFit helps users stay consistent with their fitness routines through simple workout tracking. It organizes fitness activity and daily progress, with reminders and a clean, lightweight interface.",
     technologies: ["SwiftUI", "MVVM", "HealthKit", "Apple Watch", "Gemini", "Food scanning"],
     heroImage: projectMedia["koalafit"]?.heroImage,
     gallery: projectMedia["koalafit"]?.gallery ?? [],
@@ -103,8 +103,7 @@ const projects: Project[] = [
     ],
     caseStudy: {
       context: [
-        "KoalaFit is a shipped iOS app on the App Store, built natively with SwiftUI.",
-        ph("One-sentence description of what KoalaFit does for its users"),
+        "KoalaFit is a workout-tracking app for people building new fitness habits or maintaining an existing routine. Its App Store listing emphasizes tracking workouts and fitness activity, monitoring daily progress and consistency, and smart reminders in a simple interface.",
       ],
       problem: [ph("The product problem KoalaFit solves, and for whom")],
        role: ["Owned all technical development for KoalaFit and handled App Store submission, including responding to Apple’s review requirements."],
@@ -132,9 +131,9 @@ const projects: Project[] = [
     published: true,
     year: ph("Year"),
     role: "CI/CD implementation",
-    description: "A SwiftUI app built on PhotoKit, Vision, CoreLocation and UserNotifications.",
+    description: "Context-aware photo reminders based on locations and calendar events, helping preserve meaningful moments.",
     summary:
-      "MindMories is an independent iOS project in SwiftUI and MVVM, integrating native Apple frameworks: PhotoKit, Vision, CoreLocation and UserNotifications.",
+      "MindMories helps users remember to photograph meaningful moments before they pass. Location-based reminders and calendar integration prompt users at relevant times and places, while Memory Relive lets them revisit captured moments.",
     technologies: ["SwiftUI", "MVVM", "PhotoKit", "Vision", "CoreLocation", "UserNotifications", "CI/CD", "TestFlight"],
     heroImage: projectMedia["mindmories"]?.heroImage,
     gallery: projectMedia["mindmories"]?.gallery ?? [],
@@ -144,7 +143,7 @@ const projects: Project[] = [
       { label: "GitHub", href: ph("Repository URL, if public") },
     ],
     caseStudy: {
-      context: [ph("What MindMories is and who it is for")],
+      context: ["MindMories is a context-aware reminder app for capturing meaningful moments during travel, birthdays, special events and everyday life. Its App Store description calls the product MindMory and highlights saved-location reminders, calendar integration, context-aware notifications and Memory Relive."],
       problem: [ph("The problem it solves")],
        role: ["Implemented CI/CD for MindMories, with the TestFlight automation setup documented in the linked article."],
       approach: [ph("How you approached it")],
