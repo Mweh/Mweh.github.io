@@ -37,8 +37,8 @@ export function FreelanceBlock() {
           const project = f.projectSlug ? getProject(f.projectSlug) : undefined;
           return (
           <article key={f.id} className="flex min-w-0 flex-col">
-            {project && <Link to="/work/$slug" params={{ slug: project.slug }} aria-label={`${project.title} case study`} className="mb-5 block rounded-lg focus-visible:outline-2 focus-visible:outline-ring">
-              <MediaFrame image={project.heroImage} images={project.gallery} label={project.title} />
+            {project && <Link to="/work/$slug" params={{ slug: project.slug }} aria-label={`${project.title} case study`} className="group mb-5 block rounded-xl focus-visible:outline-2 focus-visible:outline-ring">
+              <MediaFrame image={project.heroImage} label={project.title} />
             </Link>}
             <p className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
               {f.country}

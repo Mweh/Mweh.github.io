@@ -1,4 +1,5 @@
 # Portfolio improvements
+- [ ] Revert inset screenshot previews to full-bleed rounded covers and verify navigation and layout
 - [x] Audit and unify project-image proportions, spacing and alignment across all pages (320–1280px verified)
 - [x] Add Revigurize and Love in the Sky with official App Store descriptions, covers and freelance links
 - [x] Add supplied Qita, MyTelkomsel, KoalaFit and MindMories contributions with regression checks

@@ -4,39 +4,20 @@ import { cn } from "@/lib/utils";
 /** Shows a real project image, or a clean title tile until one exists. Never fake screenshots. */
 export function MediaFrame({
   image,
-  images = [],
   label,
   caption,
   className,
   priority = false,
 }: {
   image?: ProjectImage | undefined;
-  images?: ProjectImage[];
   label: string;
   caption?: string;
   className?: string;
   priority?: boolean;
 }) {
-  const screenshots = images.slice(0, 3);
-  const hasScreenshots = screenshots.length > 0;
   return (
-    <div className={cn("relative overflow-hidden rounded-lg border bg-surface", image || hasScreenshots ? "aspect-[16/9]" : "min-h-28", className)}>
-      {hasScreenshots ? (
-        <div className="grid h-full grid-cols-3 gap-2 p-2">
-          {screenshots.map((screenshot) => (
-            <img
-              key={screenshot.src}
-              src={screenshot.src}
-              alt={screenshot.alt}
-              width={screenshot.width}
-              height={screenshot.height}
-              loading={priority ? "eager" : "lazy"}
-              decoding="async"
-              className="h-full min-h-0 w-full min-w-0 object-contain"
-            />
-          ))}
-        </div>
-      ) : image ? (
+    <div className={cn("relative overflow-hidden rounded-xl bg-surface", image ? "aspect-[4/3]" : "min-h-28", className)}>
+      {image ? (
         <img
           src={image.src}
           alt={image.alt}
@@ -44,7 +25,7 @@ export function MediaFrame({
           height={image.height}
           loading={priority ? "eager" : "lazy"}
           decoding="async"
-          className="h-full w-full object-contain"
+          className="h-full w-full object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-out motion-safe:group-hover:scale-[1.02]"
         />
       ) : (
         <div aria-hidden className="flex h-full flex-col justify-end p-6">

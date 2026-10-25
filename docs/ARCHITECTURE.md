@@ -51,4 +51,4 @@ Tailwind v4, configured in `src/styles.css`. Semantic tokens (`background`, `for
 - CV: `public/cv/muhammad-fahmi-cv.pdf`, set `profile.cvUrl` to `/cv/muhammad-fahmi-cv.pdf`.
 - Without an image, project cards show a compact title tile; case studies omit the media frame. Never generate fake screenshots.
 - Official App Store images are mapped in `src/data/projectMedia.ts`: managed pointers for development, optimized local files for independently hosted production. Covers combine three unaltered screenshots; case studies also show each full screenshot with links to its full-sized image.
-- `MediaFrame` displays up to three gallery screenshots in equal slots inside a shared 16:9 preview with uniform gutters. Each screenshot keeps its natural proportions without cropping or hover zoom; standalone covers are a fallback. Detail galleries use equal portrait frames with contain sizing.
+- `MediaFrame` displays the supplied cover edge-to-edge in a shared rounded 4:3 frame with cover sizing and a subtle reduced-motion-aware hover zoom. Detail galleries use equal rounded portrait frames with contain sizing to preserve full screenshots for inspection.
