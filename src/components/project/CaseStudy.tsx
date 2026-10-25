@@ -6,7 +6,6 @@ import { TextValue } from "@/components/common/TextValue";
 import { ExternalLink } from "@/components/common/ExternalLink";
 import { isPlaceholder } from "@/lib/placeholder";
 import { useReveal } from "@/hooks/use-reveal";
-import { MediaFrame } from "./MediaFrame";
 
 /** One uncropped screenshot tile in the detail gallery. */
 function GalleryShot({ image }: { image: ProjectImage }) {
@@ -123,40 +122,7 @@ export function CaseStudy({ project }: { project: Project }) {
           ))}
         </ul>
 
-        {project.heroImage && project.gallery.length > 0 ? (
-          // Detail view: the cover (also used on cards) appears second and uncropped,
-          // never as a cropped hero on top of the same screenshots.
-          <div className="mt-12 grid gap-5 sm:grid-cols-3">
-            {project.gallery[0] && <GalleryShot image={project.gallery[0]} />}
-            <a
-              href={project.heroImage.src}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block overflow-hidden rounded-xl bg-surface focus-visible:outline-2 focus-visible:outline-ring sm:col-span-2"
-            >
-              <img
-                src={project.heroImage.src}
-                alt={project.heroImage.alt}
-                width={project.heroImage.width}
-                height={project.heroImage.height}
-                loading="lazy"
-                decoding="async"
-                className="h-full w-full object-contain"
-              />
-            </a>
-            {project.gallery.slice(1).map((image) => (
-              <GalleryShot key={image.src} image={image} />
-            ))}
-          </div>
-        ) : project.heroImage ? (
-          <MediaFrame
-            image={project.heroImage}
-            label={project.title}
-            caption={project.technologies.join(" · ")}
-            priority
-            className="mt-12"
-          />
-        ) : project.gallery.length > 0 ? (
+        {project.gallery.length > 0 ? (
           <div className="mt-12 grid grid-cols-1 items-start gap-5 sm:grid-cols-3">
             {project.gallery.map((image) => (
               <GalleryShot key={image.src} image={image} />
