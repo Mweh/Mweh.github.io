@@ -13,6 +13,7 @@ npm ci
 npm run dev      # local dev server
 npm run build    # static production build -> .output/public
 npm run preview
+npm test        # project checks, requires Bun (installed automatically in Actions)
 ```
 
 (`bun install` / `bun run …` work too; only standard npm is required.)
@@ -25,7 +26,7 @@ The site builds to plain static files in `.output/public` — no server, databas
 2. In the repo: **Settings → Pages → Source: GitHub Actions**.
 3. Push to `main` — the workflow in `.github/workflows/deploy.yml` runs `npm ci && npm run build` and publishes `.output/public` to `https://<your-github-username>.github.io`.
 
-The site origin is set via `VITE_SITE_URL` (the workflow sets it automatically from your username; locally it defaults to `https://mweh.github.io` — change it in `src/data/profile.ts` if your username differs). `sitemap.xml` and `robots.txt` are generated at build time from the same data.
+The site origin is set via `VITE_SITE_URL` (the workflow sets it automatically from your username; locally it defaults to `https://mweh.github.io`). `sitemap.xml` and `robots.txt` are generated at build time by scanning prerendered HTML. Actions runs the project-data tests before building; normal production installation and building still use standard npm.
 
 To test the production build exactly as GitHub Pages serves it:
 
@@ -48,8 +49,9 @@ All content is in `src/data/` — components never contain copy.
 | `experience.ts` | Timeline |
 | `freelance.ts` | International freelance entries |
 | `skills.ts` | Grouped skills |
+| `site.ts` | Shared positioning and section copy |
 
-Missing information is written as `ph("what is missing")` and shows on the site as a dashed "To be added" label. Search for `ph(` to find everything still to fill in.
+Missing information is written as `ph("what is missing")`: development shows a dashed "To be added" label, while production shows "Available on request" for retained fields. Search for `ph(` to find everything still to fill in.
 
 ## Add a project
 

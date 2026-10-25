@@ -42,4 +42,4 @@ Built and deployable. Content gaps are listed in PRD 10.
 
 ## Open questions
 
-- Years of experience: site shows **3+** (your edit); original brief said 5+. To confirm.
+- Years of experience: **3+**, confirmed by the owner.

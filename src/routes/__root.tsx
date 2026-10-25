@@ -76,13 +76,16 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 }
 
 export const Route = createRootRoute({
-  head: () => ({
+  head: ({ matches }) => ({
     // Site-wide defaults only. Each route sets its own title/description/og tags.
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
       { name: "author", content: "Muhammad Fahmi" },
       { name: "theme-color", content: "#faf9f6" },
+      ...(matches.some((match) => match._notFound || match.status === "notFound")
+        ? [{ title: "Page not found — Muhammad Fahmi" }, { name: "robots", content: "noindex" }]
+        : []),
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
