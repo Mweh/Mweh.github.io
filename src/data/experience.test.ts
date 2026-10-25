@@ -20,3 +20,8 @@ test("CV education contains all four qualifications and exact degree GPA", () =>
   expect(education.map((entry) => entry.id)).toEqual(["apple", "umi-degree", "ui", "darmstadt"]);
   expect(education.find((entry) => entry.id === "umi-degree")?.summary).toBe("GPA: 3.98/4.00 · Magna Cumlaude.");
 });
+
+test("Apple Developer Academy and Universitas Indonesia show their official logos", () => {
+  expect(education.find((entry) => entry.id === "apple")?.image?.alt).toBe("Apple logo");
+  expect(education.find((entry) => entry.id === "ui")?.image?.alt).toBe("Universitas Indonesia emblem");
+});

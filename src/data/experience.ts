@@ -75,6 +75,7 @@ export const experience: ExperienceEntry[] = [
 export const education: ExperienceEntry[] = [
   {
     id: "apple",
+    image: organizationMedia.apple,
     role: "Apple Developer Academy",
     organization: "Apple Developer Academy Indonesia",
     location: "Indonesia",
@@ -93,6 +94,7 @@ export const education: ExperienceEntry[] = [
   },
   {
     id: "ui",
+    image: organizationMedia.ui,
     role: "Undergraduate Micro Credentials · Computer Science",
     organization: "Universitas Indonesia",
     location: "Jakarta, Indonesia",
